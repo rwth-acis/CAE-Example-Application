@@ -1,5 +1,5 @@
 --
--- Database:  videos 
+-- Database:  commedit 
 --
 -- --------------------------------------------------------
 
@@ -7,7 +7,7 @@
 -- Table structure for table videodetails 
 --
 
-CREATE TABLE IF NOT EXISTS videos.videodetails  (
+CREATE TABLE IF NOT EXISTS commedit.videodetails  (
    videoId  varchar(250) NOT NULL,
    url  varchar(250) NOT NULL,
    thumbnail  varchar(250) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS videos.videodetails  (
 -- Dumping data for table videodetails 
 --
 
-INSERT INTO videos.videodetails ( videoId,  url,  thumbnail,  uploader,  tool,  community,  time,  description ) VALUES
+INSERT INTO commedit.videodetails ( videoId,  url,  thumbnail,  uploader,  tool,  community,  time,  description ) VALUES
 ('1', 'http://cdn.clipcanvas.com/sample/clipcanvas_14348_H264_640x360.mp4', 'http://i.imgur.com/HngIsi8.jpg', 'Filibuster Chowder', 'restservice', 'ACIS', '2014-12-10 16:14:32', 'This is a test video'),
 ('2', 'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4', 'http://i.imgur.com/xxAqUpz.jpg', 'Snorkel Polenta', 'restservice', 'ACIS', '2014-12-04 15:30:39', 'This is another test video'),
 ('3', 'http://techslides.com/demos/sample-videos/small.mp4', 'http://i.imgur.com/UucIiQc.jpg', 'Folderol Rice', 'achso', 'i5', '2014-12-12 10:35:43', 'This is a great video'),
