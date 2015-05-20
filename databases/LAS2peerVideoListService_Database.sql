@@ -7,15 +7,15 @@
 -- Table structure for table videodetails 
 --
 
-CREATE TABLE IF NOT EXISTS commedit.videodetails  (
-   videoId  varchar(250) NOT NULL,
-   url  varchar(250) NOT NULL,
-   thumbnail  varchar(250) NOT NULL,
-   uploader  varchar(50) NOT NULL,
-   tool  varchar(50) NOT NULL,
-   community  varchar(50) NOT NULL,
-   time  timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-   description  varchar(250) NOT NULL,
+CREATE TABLE IF NOT EXISTS commedit.videodetails (
+   videoId varchar(250) NOT NULL,
+   url varchar(250) NOT NULL,
+   thumbnail varchar(250) NOT NULL,
+   uploader varchar(50) NOT NULL,
+   tool varchar(50) NOT NULL,
+   community varchar(50) NOT NULL,
+   time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+   description varchar(250) NOT NULL,
    PRIMARY KEY (videoId)
 );
 

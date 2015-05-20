@@ -36,19 +36,33 @@ var init = function () {
   var iwcCallback = function (intent) {
     // define your reactions on incoming iwc events here
     console.log(intent);
+    // received answer from graph widget
+    if(intent.action=="RETURN_GRAPH"){
+      console.log(intent.data);
+    }
   };
   client = new Las2peerWidgetLibrary("http://localhost:8081/graphs", iwcCallback);
   
     $('#loadButton').on('click', function () {
     var $btn = $(this).button('loading')
-    // business logic...
-    //$btn.button('reset')
+    sendLoadGraphIntent("null");
+    $btn.button('reset');
   })
     $('#storeButton').on('click', function () {
     var $btn = $(this).button('storing')
-    // business logic...
-   // $btn.button('reset')
+    sendStoreGraphIntent();
+    $btn.button('reset')
   })
+}
+
+var sendLoadGraphIntent = function (graph) {
+  // convert to JSON (one cannot sent JS-arrays via intents)
+  graph = JSON.stringify(graph);
+  client.sendIntent("LOAD_GRAPH", graph);
+}
+
+var sendStoreGraphIntent = function () {
+  client.sendIntent("STORE_GRAPH", "no data");
 }
 
 $(document).ready(function () {
