@@ -95,7 +95,7 @@ public class VideoListService extends Service {
 			@ApiResponse(code = 404, message = "No videos exist"),
 			@ApiResponse(code = 500, message = "Internal error"),
 	})
-	public HttpResponse getVideosDetail() {
+	public HttpResponse getVideoList() {
 		String result = "";
 		String columnName="";
 		String selectquery ="";
