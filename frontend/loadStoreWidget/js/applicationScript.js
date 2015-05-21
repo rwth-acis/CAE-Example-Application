@@ -38,22 +38,33 @@ var init = function () {
     console.log(intent);
     // received answer from graph widget
     if(intent.action=="RETURN_GRAPH"){
-      console.log(intent.data);
+      storeGraph(intent.data);
     }
   };
   client = new Las2peerWidgetLibrary("http://localhost:8081/graphs", iwcCallback);
   
-    $('#loadButton').on('click', function () {
-    var $btn = $(this).button('loading')
+  $('#loadButton').on('click', function () {
     sendLoadGraphIntent("null");
-    $btn.button('reset');
   })
-    $('#storeButton').on('click', function () {
-    var $btn = $(this).button('storing')
+  $('#storeButton').on('click', function () {
     sendStoreGraphIntent();
-    $btn.button('reset')
   })
 }
+
+function storeGraph(graph) {
+    client.sendRequest("POST",
+    "/",
+    graph,
+    "application/json",
+    {},
+    function(data,type) {
+      
+    },
+    function(error) {
+      // this is the error callback
+      console.log(error);
+    }
+)};
 
 var sendLoadGraphIntent = function (graph) {
   // convert to JSON (one cannot sent JS-arrays via intents)

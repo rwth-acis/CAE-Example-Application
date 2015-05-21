@@ -107,8 +107,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </tbody>
       </table>
     </div>
-    <button type="button" id="loadButton" data-loading-text="Loading.." class="btn btn-default">Load</button>
-    <button type="button" id="storeButton" data-storing-text="Storing.." class="btn btn-default">Store</button>
+    <button type="button" id="loadButton" class="btn btn-default">Load</button>
+    <button type="button" id="storeButton"class="btn btn-default">Store</button>
   </div>
 
 </body>

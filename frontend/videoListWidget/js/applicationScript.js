@@ -6,12 +6,12 @@ var init = function () {
     // define your reactions on incoming iwc events here
     console.log(intent);
   };
-  client = new Las2peerWidgetLibrary("http://localhost:8080/", iwcCallback);
+  client = new Las2peerWidgetLibrary("http://localhost:8080/videos", iwcCallback);
 }
 
 function getVideos() {
     client.sendRequest("GET",
-    "videos",
+    "/",
     "",
     "application/json",
     {},
