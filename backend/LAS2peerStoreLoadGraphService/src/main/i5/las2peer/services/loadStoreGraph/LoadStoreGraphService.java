@@ -27,6 +27,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import com.mysql.jdbc.ResultSetMetaData;
+
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 import net.minidev.json.JSONValue;
@@ -80,9 +82,9 @@ public class LoadStoreGraphService extends Service {
 	////////////////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Stores a graph to the database. 
-	 * and returns an HTTP response including a JSON object.
+	 * Stores a graph to the database.
 	 * 
+	 * @param graph a JSON object containing the graph
 	 * @return HttpResponse
 	 * 
 	 */
@@ -108,6 +110,9 @@ public class LoadStoreGraphService extends Service {
 		}
 		String insertQuery ="";
 		int id = (int) content.get("id");
+		if(id == -1){
+			id = 0; // in case of a new graph
+		}
 		String description = (String) content.get("description");
 		JSONArray array = (JSONArray) content.get("nodes");
 		String nodes = array.toJSONString();
@@ -116,19 +121,19 @@ public class LoadStoreGraphService extends Service {
 		Connection conn = null;
 		PreparedStatement stmnt = null;
 		try {
-			// get connection from connection pool
 			conn = dbm.getConnection();
-			insertQuery = "INSERT INTO commedit.graphs ( graphId,  description,  nodes,  links ) VALUES ('" + id + "', '" + description + "', '" + nodes + "', '" + links + "');";
-			// prepare statement
+			// formulate statement
+			insertQuery = "INSERT INTO graphs ( graphId,  description,  nodes,  links ) " +
+			"VALUES ('" + id + "', '" + description + "', '" + nodes + "', '" + links + "') ON DUPLICATE KEY UPDATE "+
+					"description = + '" + description + "', " + "nodes = + '" + nodes + "', " + "links = + '" + links + "';";
 			stmnt = conn.prepareStatement(insertQuery);
-			// retrieve result set
+			// execute query
 			stmnt.executeUpdate();
 			
-			// return HTTP Response on success
-			HttpResponse r = new HttpResponse("Graph Stored");
-			r.setStatus(200);
+			// return HTTP response on success
+			HttpResponse r = new HttpResponse("Graph stored");
+			r.setStatus(201);
 			return r;
-			
 		} catch (Exception e) {
 			// return HTTP Response on error
 			HttpResponse er = new HttpResponse("Internal error: " + e.getMessage() + stmnt.toString());
@@ -136,6 +141,224 @@ public class LoadStoreGraphService extends Service {
 			return er;
 		} finally {
 			// free resources
+			if (stmnt != null) {
+				try {
+					stmnt.close();
+				} catch (Exception e) {
+					// return HTTP Response on error
+					HttpResponse er = new HttpResponse("Internal error: " + e.getMessage());
+					er.setStatus(500);
+					return er;
+				}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (Exception e) {
+					Context.logError(this, e.getMessage());
+					// return HTTP Response on error
+					HttpResponse er = new HttpResponse("Internal error: " + e.getMessage());
+					er.setStatus(500);
+					return er;
+				}
+			}
+		}
+	}
+	
+	
+	/**
+	 * Fetches a graph from the database.
+	 *  
+	 * @param id the id of the graph
+	 * @return HttpResponse
+	 * 
+	 */
+	@GET
+	@Path("/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	@ResourceListApi(description = "Loads a graph from the database.")
+	@Summary("Returns a graph from the database according to the passed id.")
+	@ApiResponses(value={
+			@ApiResponse(code = 200, message = "Graph loaded"),
+			@ApiResponse(code = 404, message = "Graph not found"),
+			@ApiResponse(code = 500, message = "Internal error"),
+	})
+	public HttpResponse loadGraph(@PathParam(value = "id") int id) {
+		String result = "";
+		String columnName="";
+		String selectquery ="";
+		int columnCount = 0;
+		Connection conn = null;
+		PreparedStatement stmnt = null;
+		ResultSet rs = null;
+		ResultSetMetaData rsmd = null;
+		try {
+			// get connection from connection pool
+			conn = dbm.getConnection();
+			selectquery = "SELECT * FROM graphs WHERE graphId = " + id + " ;" ;
+			
+			// prepare statement
+			stmnt = conn.prepareStatement(selectquery);
+			
+			// retrieve result set
+			rs = stmnt.executeQuery();
+			rsmd = (ResultSetMetaData) rs.getMetaData();
+			columnCount = rsmd.getColumnCount();
+			// process result set
+			if (rs.next()) {
+				JSONObject ro = new JSONObject();
+				for(int i=1;i<=columnCount;i++){
+					result = rs.getString(i);
+					columnName = rsmd.getColumnName(i);
+					// setup resulting JSON Object
+					ro.put(columnName, result);
+				}
+				
+				// return HTTP Response on success
+				HttpResponse r = new HttpResponse(ro.toJSONString());
+				r.setStatus(200);
+				return r;
+				
+			} else {
+				result = "No result for graph with id " + id;
+				
+				// return HTTP Response on error
+				HttpResponse er = new HttpResponse(result);
+				er.setStatus(404);
+				return er;
+			}
+			
+		} catch (Exception e) {
+			// return HTTP Response on error
+			HttpResponse er = new HttpResponse("Internal error: " + e.getMessage());
+			er.setStatus(500);
+			return er;
+		} finally {
+			// free resources
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (Exception e) {
+					Context.logError(this, e.getMessage());
+					
+					// return HTTP Response on error
+					HttpResponse er = new HttpResponse("Internal error: " + e.getMessage());
+					er.setStatus(500);
+					return er;
+				}
+			}
+			if (stmnt != null) {
+				try {
+					stmnt.close();
+				} catch (Exception e) {
+					Context.logError(this, e.getMessage());
+					
+					// return HTTP Response on error
+					HttpResponse er = new HttpResponse("Internal error: " + e.getMessage());
+					er.setStatus(500);
+					return er;
+				}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (Exception e) {
+					Context.logError(this, e.getMessage());
+					
+					// return HTTP Response on error
+					HttpResponse er = new HttpResponse("Internal error: " + e.getMessage());
+					er.setStatus(500);
+					return er;
+				}
+			}
+		}
+	}
+	
+	/**
+	 * Retrieves the graph list from the database 
+	 * and returns an HTTP response including a JSON object.
+	 * 
+	 * @return HttpResponse
+	 * 
+	 */
+	@GET
+	@Path("/")
+	@Produces("application/json")
+	@ResourceListApi(description = "Returns a list of graphs.")
+	@Summary("Return a JSON array with a list of graphs.")
+	@ApiResponses(value={
+			@ApiResponse(code = 200, message = "Graph List, JSON Array"),
+			@ApiResponse(code = 404, message = "No graphs exist"),
+			@ApiResponse(code = 500, message = "Internal error"),
+	})
+	public HttpResponse getGraphList() {
+		String result = "";
+		String columnName="";
+		String selectquery ="";
+		int columnCount = 0;
+		Connection conn = null;
+		PreparedStatement stmnt = null;
+		ResultSet rs = null;
+		ResultSetMetaData rsmd = null;
+		JSONObject ro=null;
+		JSONArray qs = new JSONArray();
+		try {
+			// get connection from connection pool
+			conn = dbm.getConnection();
+			selectquery = "SELECT graphId, description FROM graphs;";
+			// prepare statement
+			stmnt = conn.prepareStatement(selectquery);
+			
+			// retrieve result set
+			rs = stmnt.executeQuery();
+			rsmd = (ResultSetMetaData) rs.getMetaData();
+			columnCount = rsmd.getColumnCount();
+			
+			// process result set
+			while(rs.next()){
+				ro = new JSONObject();
+				for(int i=1;i<=columnCount;i++){
+					result = rs.getString(i);
+					columnName = rsmd.getColumnName(i);
+					// setup resulting JSON Object
+					ro.put(columnName, result);
+					
+				}
+				qs.add(ro);
+			}
+			if (qs.isEmpty()){
+				result = "No results";
+				
+				// return HTTP Response on error
+				HttpResponse er = new HttpResponse(result);
+				er.setStatus(404);
+				return er;
+								
+			} else {
+				// return HTTP Response on success
+				HttpResponse r = new HttpResponse(qs.toJSONString());
+				r.setStatus(200);
+				return r;
+				}
+		} catch (Exception e) {
+			// return HTTP Response on error
+			HttpResponse er = new HttpResponse("Internal error: " + e.getMessage() + stmnt.toString());
+			er.setStatus(500);
+			return er;
+		} finally {
+			// free resources
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (Exception e) {
+					Context.logError(this, e.getMessage());
+					
+					// return HTTP Response on error
+					HttpResponse er = new HttpResponse("Internal error: " + e.getMessage() + stmnt.toString());
+					er.setStatus(500);
+					return er;
+				}
+			}
 			if (stmnt != null) {
 				try {
 					stmnt.close();

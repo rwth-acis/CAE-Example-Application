@@ -103,12 +103,22 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <th>Description</th>
           </tr>
         </thead>
-        <tbody id="videoTable">
+        <tbody id="graphTable">
         </tbody>
       </table>
     </div>
-    <button type="button" id="loadButton" class="btn btn-default">Load</button>
-    <button type="button" id="storeButton"class="btn btn-default">Store</button>
+    
+    <div class="col-lg-6">
+        <div class="input-group">
+          <input id ="descriptionInput" type="text" class="form-control" placeholder="Description">
+          <span class="input-group-btn">
+            <button id = "storeButton" class="btn btn-default" type="button">Store</button>
+          </span>
+        </div>
+        <br><button id = "newButton" class="btn btn-default" type="button">New</button>
+      </div>
+    </div>
+
   </div>
 
 </body>

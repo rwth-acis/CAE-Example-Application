@@ -8,7 +8,7 @@
 --
 
 CREATE TABLE IF NOT EXISTS commedit.graphs (
-   graphId int NOT NULL,
+   graphId int NOT NULL AUTO_INCREMENT,
    description varchar(250) NOT NULL,
    nodes text NOT NULL,
    links text NOT NULL,

@@ -38,32 +38,81 @@ var init = function () {
     console.log(intent);
     // received answer from graph widget
     if(intent.action=="RETURN_GRAPH"){
-      storeGraph(intent.data);
+      var newDescription=$('#descriptionInput').val()
+      storeGraph(intent.data, newDescription);
     }
   };
   client = new Las2peerWidgetLibrary("http://localhost:8081/graphs", iwcCallback);
   
-  $('#loadButton').on('click', function () {
-    sendLoadGraphIntent("null");
-  })
   $('#storeButton').on('click', function () {
     sendStoreGraphIntent();
   })
   
+  $('#newButton').on('click', function () {
+    sendNewGraphIntent();
+  })
 }
 
-function storeGraph(graph) {
+function storeGraph(graph, newDescription) {
+    graph = $.parseJSON(graph);
+    graph.description = newDescription;
+    console.log(graph);
+    graph = JSON.stringify(graph);
     client.sendRequest("POST",
     "",
     graph,
     "application/json",
     {},
     function(data,type) {
-      
+      // update list
+      getGraphs();
     },
     function(error) {
       // this is the error callback
       console.log(error);
+    }
+)};
+
+function loadGraph(id) {
+    client.sendRequest("GET",
+    id,
+    "",
+    "application/json",
+    {},
+    function(data,type) {
+      sendLoadGraphIntent(data);
+    },
+    function(error) {
+      // this is the error callback
+      console.log(error);
+    }
+)};
+
+function getGraphs() {
+    client.sendRequest("GET",
+    "",
+    "",
+    "application/json",
+    {},
+    function(data,type) {
+      // add table rows
+      var graphDetails = [];
+      $.each(data, function(index, value) {
+        graphDetails.push( "<tr><td>" + value.graphId + "</td><td>" + value.description + "</td></tr>" );
+      });
+      $("#graphTable").html(graphDetails);
+
+      // make table rows "clickable"
+      $("#graphTable").find("tr").click(function() {
+      // get the id
+      var id = $(this).find("td").get(0).innerHTML;
+      loadGraph(id);
+      });
+    },
+        function(error) {
+      // this is the error callback
+      console.log(error);
+      $("#graphTable").html(error);
     }
 )};
 
@@ -77,6 +126,11 @@ var sendStoreGraphIntent = function () {
   client.sendIntent("STORE_GRAPH", "no data");
 }
 
+var sendNewGraphIntent = function(){
+  client.sendIntent("NEW_GRAPH","no data");
+}
+
 $(document).ready(function () {
   init();
+  getGraphs();
 });

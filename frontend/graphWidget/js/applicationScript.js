@@ -16,10 +16,22 @@ var init = function () {
     }
     // receive the graph and replace it with the current one
     if(intent.action=="LOAD_GRAPH"){
-      id = intent.data.id;
-      description = intent.data.description;
-      nodes = $.parseJSON(intent.data.nodes);
-      links = $.parseJSON(intent.data.links);
+      var graph = $.parseJSON(intent.data);
+      id = parseInt(graph.graphId);
+      description = graph.description;
+      nodes = $.parseJSON(graph.nodes);
+      lastNodeId = nodes.length - 1;
+      links = $.parseJSON(graph.links);
+      restart();
+    }
+    // clear nodes and links
+      if(intent.action=="NEW_GRAPH"){
+      id = -1
+      description = "none";
+      nodes = []
+      lastNodeId = -1;
+      links = [];
+      restart();
     }
   };
   client = new Las2peerWidgetLibrary(null, iwcCallback);

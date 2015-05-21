@@ -1,1 +1,3 @@
-<!-- -->
+#graphTable tr:hover {
+    background-color: #ccc;
+}
