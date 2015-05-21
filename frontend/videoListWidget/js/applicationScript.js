@@ -11,7 +11,7 @@ var init = function () {
 
 function getVideos() {
     client.sendRequest("GET",
-    "/",
+    "",
     "",
     "application/json",
     {},
