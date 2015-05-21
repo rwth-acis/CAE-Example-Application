@@ -79,8 +79,8 @@ public class VideoListService extends Service {
 	////////////////////////////////////////////////////////////////////////////////////////
 	
 	/**
-	 * Method that retrieves the video details from the database 
-	 * and return an HTTP response including a JSON object.
+	 * Retrieves the video list from the database 
+	 * and returns an HTTP response including a JSON object.
 	 * 
 	 * @return HttpResponse
 	 * 
