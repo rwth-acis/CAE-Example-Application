@@ -4,6 +4,8 @@ import i5.las2peer.api.Service;
 import i5.las2peer.restMapper.HttpResponse;
 import i5.las2peer.restMapper.MediaType;
 import i5.las2peer.restMapper.RESTMapper;
+import i5.las2peer.restMapper.annotations.Consumes;
+import i5.las2peer.restMapper.annotations.ContentParam;
 import i5.las2peer.restMapper.annotations.GET;
 import i5.las2peer.restMapper.annotations.POST;
 import i5.las2peer.restMapper.annotations.Path;
@@ -18,7 +20,6 @@ import i5.las2peer.restMapper.annotations.swagger.Summary;
 import i5.las2peer.restMapper.tools.ValidationResult;
 import i5.las2peer.restMapper.tools.XMLCheck;
 import i5.las2peer.security.Context;
-import i5.las2peer.security.UserAgent;
 import i5.las2peer.services.loadStoreGraph.database.DatabaseManager;
 
 import java.io.IOException;
@@ -26,28 +27,24 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
+import net.minidev.json.JSONValue;
+import net.minidev.json.parser.ParseException;
 
 /**
- * LAS2peer Service
+ * LAS2peerLoadStoreGraphService
  * 
- * This is a template for a very basic LAS2peer service
- * that uses the LAS2peer Web-Connector for RESTful access to it.
- * 
- * Note:
- * If you plan on using Swagger you should adapt the information below
- * in the ApiInfo annotation to suit your project.
- * If you do not intend to provide a Swagger documentation of your service API,
- * the entire ApiInfo annotation should be removed.
- * 
+ *  This microservice is part of the CAE-Example Application.
+ *  It purpose is to provide a persistence functionality for graphs used in this application.
  */
-@Path("example")
+@Path("graphs")
 @Version("0.1")
 @ApiInfo(
-		  title="LAS2peer Template Service",
-		  description="A LAS2peer Template Service for demonstration purposes.",
+		  title="LAS2peerLoadStoreGraphService",
+		  description="A LAS2peer service storing and loading graphs from a database.",
 		  termsOfServiceUrl="http://your-terms-of-service-url.com",
-		  contact="john.doe@provider.com",
+		  contact="lange@dbis.rwth-aachen.de",
 		  license="BSD License",
 		  licenseUrl="http://your-software-license-url.com"
 		)
@@ -68,7 +65,7 @@ public class LoadStoreGraphService extends Service {
 	 */
 	private String webconnectorProtocol = "http";
 	private String webconnectorIpAdress = "localhost";
-	private String webconnectorPort = "8080";
+	private String webconnectorPort = "8081";
 	
 	public LoadStoreGraphService() {
 		// read and set properties values
@@ -82,7 +79,90 @@ public class LoadStoreGraphService extends Service {
 	//  Service methods.
 	////////////////////////////////////////////////////////////////////////////////////////
 
-
+	/**
+	 * Stores a graph to the database. 
+	 * and returns an HTTP response including a JSON object.
+	 * 
+	 * @return HttpResponse
+	 * 
+	 */
+	@POST
+	@Path("/")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@ResourceListApi(description = "Stores a graph to the database.")
+	@Summary("Stores a passed JSON graph to the database.")
+	@ApiResponses(value={
+			@ApiResponse(code = 201, message = "Graph stored"),
+			@ApiResponse(code = 500, message = "Internal error"),
+	})
+	public HttpResponse storeGraph(@ContentParam String graph) {
+		
+		JSONObject content;
+		try {
+			content = (JSONObject) JSONValue.parseWithException(graph);
+		} catch (ParseException e) {
+			e.printStackTrace();
+			HttpResponse er = new HttpResponse("Internal error: " + e.getMessage());
+			er.setStatus(500);
+			return er;
+		}
+		String insertQuery ="";
+		int id = (int) content.get("id");
+		String description = (String) content.get("description");
+		JSONArray array = (JSONArray) content.get("nodes");
+		String nodes = array.toJSONString();
+		array = (JSONArray) content.get("links");
+		String links = array.toJSONString();
+		Connection conn = null;
+		PreparedStatement stmnt = null;
+		try {
+			// get connection from connection pool
+			conn = dbm.getConnection();
+			insertQuery = "INSERT INTO commedit.graphs ( graphId,  description,  nodes,  links ) VALUES ('" + id + "', '" + description + "', '" + nodes + "', '" + links + "');";
+			// prepare statement
+			stmnt = conn.prepareStatement(insertQuery);
+			// retrieve result set
+			stmnt.executeUpdate();
+			
+			// return HTTP Response on success
+			HttpResponse r = new HttpResponse("Graph Stored");
+			r.setStatus(200);
+			return r;
+			
+		} catch (Exception e) {
+			// return HTTP Response on error
+			HttpResponse er = new HttpResponse("Internal error: " + e.getMessage() + stmnt.toString());
+			er.setStatus(500);
+			return er;
+		} finally {
+			// free resources
+			if (stmnt != null) {
+				try {
+					stmnt.close();
+				} catch (Exception e) {
+					Context.logError(this, e.getMessage());
+					
+					// return HTTP Response on error
+					HttpResponse er = new HttpResponse("Internal error: " + e.getMessage());
+					er.setStatus(500);
+					return er;
+				}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (Exception e) {
+					Context.logError(this, e.getMessage());
+					
+					// return HTTP Response on error
+					HttpResponse er = new HttpResponse("Internal error: " + e.getMessage());
+					er.setStatus(500);
+					return er;
+				}
+			}
+		}
+	}
+	
 	////////////////////////////////////////////////////////////////////////////////////////
 	//  Methods required by the LAS2peer framework.
 	////////////////////////////////////////////////////////////////////////////////////////
