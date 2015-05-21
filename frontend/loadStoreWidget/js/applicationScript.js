@@ -49,11 +49,12 @@ var init = function () {
   $('#storeButton').on('click', function () {
     sendStoreGraphIntent();
   })
+  
 }
 
 function storeGraph(graph) {
     client.sendRequest("POST",
-    "/",
+    "",
     graph,
     "application/json",
     {},
