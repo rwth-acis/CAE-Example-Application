@@ -50,15 +50,19 @@ var svg = d3.select('body')
 var lastNodeId = -1; // a bit dirty, but works;-)
 var nodes = [];
 var links = [];
+var force;
 
-// init D3 force layout
-var force = d3.layout.force()
+// to enable load store functionality
+function initForce(){
+  // init D3 force layout
+  force = d3.layout.force()
     .nodes(nodes)
     .links(links)
     .size([width, height])
     .linkDistance(150)
     .charge(-500)
     .on('tick', tick)
+}
 
 // define arrow markers for graph links
 svg.append('svg:defs').append('svg:marker')
@@ -406,6 +410,31 @@ function createNode(videoDetails){
   restart();
 }
 
+// returns a (storable) graph representation
+// replaces node representations in links with references
+function getGraph(){
+  var storableLinks = [];
+  $.each(links, function( index, value ) {
+    storableLinks[index] = value;
+    storableLinks[index].source = storableLinks[index].source.id;
+    storableLinks[index].target = storableLinks[index].target.id;
+  });
+  var graph = {
+    "nodes": nodes,
+    "links": storableLinks
+  };
+  return graph;
+}
+
+// (re-) sets the graph to the given graph
+function setGraph(graph){
+  links = graph.links;
+  nodes = graph.nodes;
+  lastNodeId = nodes.length - 1;
+  initForce();
+  restart();
+}
+
 // app starts here
 svg.on('mousedown', mousedown)
   .on('mousemove', mousemove)
@@ -413,3 +442,4 @@ svg.on('mousedown', mousedown)
 d3.select(window)
   .on('keydown', keydown)
   .on('keyup', keyup);
+initForce();
