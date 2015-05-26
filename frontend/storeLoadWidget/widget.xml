@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
   <ModulePrefs
-    title="Load and Store"
+    title="Store and Load Widget"
     description="This widget loads and stores graphs."
     author="Peter de Lange"
     author_email="lange@dbis.rwth-aachen.de"
@@ -61,7 +61,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Load and Store</title>
+  <title>Store and Load Widget</title>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -82,11 +82,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   <!-- Inter Widget Communication library import-->
   <script type="text/javascript" src="http://dbis.rwth-aachen.de/gadgets/iwc/lib/iwc.js"></script>
   <!-- style information -->
-  <link rel="stylesheet" href="http://localhost:80/loadStoreWidget/css/style.css">
+  <link rel="stylesheet" href="http://localhost:80/storeLoadWidget/css/style.css">
   <!-- import the client library -->
-  <script type="text/javascript" src="http://localhost:80/loadStoreWidget/js/las2peerWidgetLibrary.js"></script>
+  <script type="text/javascript" src="http://localhost:80/storeLoadWidget/js/las2peerWidgetLibrary.js"></script>
   <!-- import application script -->
-  <script type="text/javascript" src="http://localhost:80/loadStoreWidget/js/applicationScript.js"></script>
+  <script type="text/javascript" src="http://localhost:80/storeLoadWidget/js/applicationScript.js"></script>
 
   <!-- Addotional widget specific imports -->
   

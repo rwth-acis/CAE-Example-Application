@@ -12,15 +12,15 @@ var init = function () {
     }
     // send the current graph via IWC so that the load store widget can process it
     if(intent.action=="STORE_GRAPH"){
-      sendGraph(nodes, links);
+      var graph = getGraph();
+      sendGraph(graph);
     }
-    // receive the graph and replace it with the current one
+    // receive the graph, parse the JSON and send it to the graph script
     if(intent.action=="LOAD_GRAPH"){
       var graph = $.parseJSON(intent.data);
-      nodes = $.parseJSON(graph.nodes);
-      lastNodeId = nodes.length - 1;
-      links = $.parseJSON(graph.links);
-      restart();
+      graph.nodes = $.parseJSON(graph.nodes);
+      graph.links = $.parseJSON(graph.links);
+      setGraph(graph);
     }
   };
   client = new Las2peerWidgetLibrary(null, iwcCallback);
@@ -33,16 +33,11 @@ var sendPlaybackVideoRequest = function (videoDetails) {
   client.sendIntent("PLAYBACK_VIDEO", videoDetails);
 }
 
-var sendGraph = function (nodes, links) {
-  var graph = {
-    "nodes": nodes,
-    "links": links
-  };
+var sendGraph = function (graph) {
   // convert to JSON (one cannot sent JS-objects via intents)
   graph = JSON.stringify(graph);
   client.sendIntent("RETURN_GRAPH", graph);
 }
-
 
 $(document).ready(function () {
   init();

@@ -148,10 +148,6 @@ var sendStoreGraphIntent = function () {
   client.sendIntent("STORE_GRAPH", "no data");
 }
 
-var sendNewGraphIntent = function(){
-  client.sendIntent("NEW_GRAPH","no data");
-}
-
 $(document).ready(function () {
   init();
   getGraphs();
