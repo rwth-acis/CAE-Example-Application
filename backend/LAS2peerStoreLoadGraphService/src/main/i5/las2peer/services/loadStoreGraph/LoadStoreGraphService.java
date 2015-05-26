@@ -28,6 +28,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import com.mysql.jdbc.ResultSetMetaData;
+import com.mysql.jdbc.Statement;
 
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
@@ -85,7 +86,7 @@ public class LoadStoreGraphService extends Service {
 	 * Stores a graph to the database.
 	 * 
 	 * @param graph a JSON object containing the graph
-	 * @return HttpResponse
+	 * @return HttpResponse in case of success it contains the id of the stored graph
 	 * 
 	 */
 	@POST
@@ -109,7 +110,7 @@ public class LoadStoreGraphService extends Service {
 			return er;
 		}
 		String insertQuery ="";
-		int id = (int) content.get("id");
+		int id = (int) content.get("graphId");
 		if(id == -1){
 			id = 0; // in case of a new graph
 		}
@@ -126,12 +127,19 @@ public class LoadStoreGraphService extends Service {
 			insertQuery = "INSERT INTO graphs ( graphId,  description,  nodes,  links ) " +
 			"VALUES ('" + id + "', '" + description + "', '" + nodes + "', '" + links + "') ON DUPLICATE KEY UPDATE "+
 					"description = + '" + description + "', " + "nodes = + '" + nodes + "', " + "links = + '" + links + "';";
-			stmnt = conn.prepareStatement(insertQuery);
+			stmnt = conn.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
 			// execute query
 			stmnt.executeUpdate();
-			
-			// return HTTP response on success
-			HttpResponse r = new HttpResponse("Graph stored");
+			ResultSet genKeys = stmnt.getGeneratedKeys();
+			if (genKeys.next()) {
+				int newId = genKeys.getInt(1);
+				// return HTTP response on success with new id
+				HttpResponse r = new HttpResponse(newId + "");
+				r.setStatus(201);
+				return r;
+			}
+			// return HTTP response on success with id of updated graph
+			HttpResponse r = new HttpResponse(id + "");
 			r.setStatus(201);
 			return r;
 		} catch (Exception e) {

@@ -31,6 +31,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 var client;
 
+//global variable stores the current graph id
+var currentGraphId = -1; // -1 means "new/unsaved"
+
 var init = function () {
 
   var iwcCallback = function (intent) {
@@ -38,10 +41,10 @@ var init = function () {
     console.log(intent);
     // received answer from graph widget
     if(intent.action=="RETURN_GRAPH"){
-      var newDescription=$('#descriptionInput').val()
-      storeGraph(intent.data, newDescription);
+      storeGraph(intent.data);
     }
   };
+  
   client = new Las2peerWidgetLibrary("http://localhost:8081/graphs", iwcCallback);
   
   $('#storeButton').on('click', function () {
@@ -49,75 +52,94 @@ var init = function () {
   })
   
   $('#newButton').on('click', function () {
-    sendNewGraphIntent();
+    // construct empty graph
+    currentGraphId = -1;
+    $('#descriptionInput').val("");
+    var graph = {
+      "nodes": "[]",
+      "links": "[]"
+    };
+    sendLoadGraphIntent(graph);
   })
 }
 
-function storeGraph(graph, newDescription) {
-    graph = $.parseJSON(graph);
-    graph.description = newDescription;
-    console.log(graph);
-    graph = JSON.stringify(graph);
-    client.sendRequest("POST",
-    "",
-    graph,
-    "application/json",
-    {},
-    function(data,type) {
-      // update list
-      getGraphs();
-    },
-    function(error) {
-      // this is the error callback
-      console.log(error);
-    }
+function storeGraph(graph) {
+  
+  graph = $.parseJSON(graph);
+  graph.graphId = currentGraphId;
+  graph.description = $('#descriptionInput').val();
+  
+  // cannot send JSON directly to LAS2peer microservice, has to be stringified
+  graph = JSON.stringify(graph);
+  client.sendRequest("POST",
+  "",
+  graph,
+  "application/json",
+  {},
+  function(data,type) {
+    //update current graph id (in case that a new graph was stored)
+    currentGraphId = parseInt(data);
+    // update list
+    getGraphs();
+  },
+  function(error) {
+    // this is the error callback
+    console.log(error);
+  }
 )};
 
 function loadGraph(id) {
-    client.sendRequest("GET",
-    id,
-    "",
-    "application/json",
-    {},
-    function(data,type) {
-      sendLoadGraphIntent(data);
-    },
-    function(error) {
-      // this is the error callback
-      console.log(error);
-    }
+  client.sendRequest("GET",
+  id,
+  "",
+  "application/json",
+  {},
+  function(data,type) {
+    // store id and update the description input field
+    currentGraphId = parseInt(data.graphId);
+    $('#descriptionInput').val(data.description);
+    var graph = {
+    "nodes": data.nodes,
+    "links": data.links
+    };
+    sendLoadGraphIntent(graph);
+  },
+  function(error) {
+    // this is the error callback
+    console.log(error);
+  }
 )};
 
 function getGraphs() {
-    client.sendRequest("GET",
-    "",
-    "",
-    "application/json",
-    {},
-    function(data,type) {
-      // add table rows
-      var graphDetails = [];
-      $.each(data, function(index, value) {
-        graphDetails.push( "<tr><td>" + value.graphId + "</td><td>" + value.description + "</td></tr>" );
-      });
-      $("#graphTable").html(graphDetails);
+  client.sendRequest("GET",
+  "",
+  "",
+  "application/json",
+  {},
+  function(data,type) {
+    // add table rows
+    var graphDetails = [];
+    $.each(data, function(index, value) {
+      graphDetails.push( "<tr><td>" + value.graphId + "</td><td>" + value.description + "</td></tr>" );
+    });
+    $("#graphTable").html(graphDetails);
 
-      // make table rows "clickable"
-      $("#graphTable").find("tr").click(function() {
-      // get the id
-      var id = $(this).find("td").get(0).innerHTML;
-      loadGraph(id);
-      });
-    },
-        function(error) {
-      // this is the error callback
-      console.log(error);
-      $("#graphTable").html(error);
-    }
+    // make table rows "clickable"
+    $("#graphTable").find("tr").click(function() {
+    // get the id
+    var id = $(this).find("td").get(0).innerHTML;
+    loadGraph(id);
+    });
+  },
+      function(error) {
+    // this is the error callback
+    console.log(error);
+    $("#graphTable").html(error);
+  }
 )};
 
 var sendLoadGraphIntent = function (graph) {
-  // convert to JSON (one cannot sent JS-arrays via intents)
+  // convert to JSON (one cannot sent JS-objects via intents)
   graph = JSON.stringify(graph);
   client.sendIntent("LOAD_GRAPH", graph);
 }

@@ -33,10 +33,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Original example taken from http://bl.ocks.org/rkirsling/5001347
 */
 
-// some additional metadata
-var id = -1;
-var description = "none";
-
 // set up SVG for D3
 var width  = 700,
     height = 500,

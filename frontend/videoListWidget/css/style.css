@@ -1,3 +1,4 @@
 #videoTable tr:hover {
     background-color: #ccc;
 }
+.scrolltable { height: 500px; overflow: auto; }
