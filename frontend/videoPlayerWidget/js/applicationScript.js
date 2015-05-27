@@ -47,6 +47,8 @@ var init = function() {
 
 var playbackVideo = function(videoDetails) {
   jwplayer("player").setup({
+    width: 700,
+    height: 500,
     file: videoDetails[2],
     image: videoDetails[1]
   });

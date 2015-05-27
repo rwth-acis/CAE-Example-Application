@@ -3,7 +3,7 @@
   <ModulePrefs title="Video List"
     description="A Widget-Frontend for the LAS2peer Video Details Services"
     author="Peter de Lange" author_email="lange@dbis.rwth-aachen.de"
-    width="500" height="500">
+    width="500" height="600">
 
     <Require feature="opensocial-0.8"></Require>
     <Require feature="openapp"></Require>

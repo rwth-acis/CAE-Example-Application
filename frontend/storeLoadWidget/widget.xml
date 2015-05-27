@@ -2,7 +2,7 @@
 <Module>
   <ModulePrefs title="Store and Load Widget" description="This widget loads and stores graphs."
     author="Peter de Lange" author_email="lange@dbis.rwth-aachen.de"
-    width="500" height="500">
+    width="500" height="600">
 
     <Require feature="opensocial-0.8"></Require>
     <Require feature="openapp"></Require>

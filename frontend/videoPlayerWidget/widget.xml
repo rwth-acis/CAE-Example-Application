@@ -2,7 +2,7 @@
 <Module>
   <ModulePrefs title="Video Player" description="Video Player Widget based on JWPlayer"
     author="Peter de Lange" author_email="lange@dbis.rwth-aachen.de"
-    width="500" height="300">
+    width="800" height="600">
 
     <Require feature="opensocial-0.8"></Require>
     <Require feature="openapp"></Require>

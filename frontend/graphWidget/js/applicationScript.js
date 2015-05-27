@@ -42,4 +42,5 @@ var sendGraph = function(graph) {
 
 $(document).ready(function() {
   init();
+  initGraph();
 });
