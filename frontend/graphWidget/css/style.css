@@ -54,3 +54,5 @@ text.id {
   text-anchor: middle;
   font-weight: bold;
 }
+
+p { text-align: center }

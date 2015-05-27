@@ -38,19 +38,75 @@ var width  = 700,
     height = 500,
     colors = d3.scale.category10();
 
-var svg = d3.select('body')
-  .append('svg')
-  .attr('width', width)
-  .attr('height', height);
+var svg;
 
 // set up node and link variables
 //  - nodes are known by 'id', not by index in array.
-//  - reflexive edges are indicated on the node (as a bold black circle).
 //  - links are always source < target; edge directions are set by 'left' and 'right'.
-var lastNodeId = -1; // a bit dirty, but works;-)
+var lastNodeId = -1;
 var nodes = [];
 var links = [];
+
 var force;
+//line displayed when dragging new nodes
+var drag_line;
+//handles to link and node element groups
+var path;
+var circle;
+//mouse event vars
+var selected_node = null,
+ selected_link = null,
+ mousedown_link = null,
+ mousedown_node = null,
+ mouseup_node = null;
+
+//app starts here
+function initGraph(){
+  d3.select("#graph").select("svg").remove();
+  
+  svg = d3.select("#graph")
+  .append('svg')
+  .attr('width', width)
+  .attr('height', height);
+  svg.on('mousedown', mousedown)
+    .on('mousemove', mousemove)
+    .on('mouseup', mouseup);
+  d3.select(window)
+    .on('keydown', keydown)
+    .on('keyup', keyup);
+  
+  //define arrow markers for graph links
+  svg.append('svg:defs').append('svg:marker')
+      .attr('id', 'end-arrow')
+      .attr('viewBox', '0 -5 10 10')
+      .attr('refX', 6)
+      .attr('markerWidth', 3)
+      .attr('markerHeight', 3)
+      .attr('orient', 'auto')
+    .append('svg:path')
+      .attr('d', 'M0,-5L10,0L0,5')
+      .attr('fill', '#000');
+
+  svg.append('svg:defs').append('svg:marker')
+      .attr('id', 'start-arrow')
+      .attr('viewBox', '0 -5 10 10')
+      .attr('refX', 4)
+      .attr('markerWidth', 3)
+      .attr('markerHeight', 3)
+      .attr('orient', 'auto')
+    .append('svg:path')
+      .attr('d', 'M10,-5L0,0L10,5')
+      .attr('fill', '#000');
+  
+  drag_line = svg.append('svg:path')
+  .attr('class', 'link dragline hidden')
+  .attr('d', 'M0,0L0,0');
+
+  path = svg.append('svg:g').selectAll('path'),
+  circle = svg.append('svg:g').selectAll('g');
+
+  initForce();
+}
 
 // to enable load store functionality
 function initForce(){
@@ -63,45 +119,6 @@ function initForce(){
     .charge(-500)
     .on('tick', tick)
 }
-
-// define arrow markers for graph links
-svg.append('svg:defs').append('svg:marker')
-    .attr('id', 'end-arrow')
-    .attr('viewBox', '0 -5 10 10')
-    .attr('refX', 6)
-    .attr('markerWidth', 3)
-    .attr('markerHeight', 3)
-    .attr('orient', 'auto')
-  .append('svg:path')
-    .attr('d', 'M0,-5L10,0L0,5')
-    .attr('fill', '#000');
-
-svg.append('svg:defs').append('svg:marker')
-    .attr('id', 'start-arrow')
-    .attr('viewBox', '0 -5 10 10')
-    .attr('refX', 4)
-    .attr('markerWidth', 3)
-    .attr('markerHeight', 3)
-    .attr('orient', 'auto')
-  .append('svg:path')
-    .attr('d', 'M10,-5L0,0L10,5')
-    .attr('fill', '#000');
-
-// line displayed when dragging new nodes
-var drag_line = svg.append('svg:path')
-  .attr('class', 'link dragline hidden')
-  .attr('d', 'M0,0L0,0');
-
-// handles to link and node element groups
-var path = svg.append('svg:g').selectAll('path'),
-    circle = svg.append('svg:g').selectAll('g');
-
-// mouse event vars
-var selected_node = null,
-    selected_link = null,
-    mousedown_link = null,
-    mousedown_node = null,
-    mouseup_node = null;
 
 function resetMouseVars() {
   mousedown_node = null;
@@ -168,10 +185,9 @@ function restart() {
   // NB: the function arg is crucial here! nodes are known by id, not by index!
   circle = circle.data(nodes, function(d) { return d.id; });
 
-  // update existing nodes (reflexive & selected visual states)
+  // update existing nodes (selected visual states)
   circle.selectAll('circle')
-    .style('fill', function(d) { return (d === selected_node) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id); })
-    .classed('reflexive', function(d) { return d.reflexive; });
+    .style('fill', function(d) { return (d === selected_node) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id); });
 
   // add new nodes
   var g = circle.enter().append('svg:g');
@@ -181,7 +197,6 @@ function restart() {
     .attr('r', 12)
     .style('fill', function(d) { return (d === selected_node) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id); })
     .style('stroke', function(d) { return d3.rgb(colors(d.id)).darker().toString(); })
-    .classed('reflexive', function(d) { return d.reflexive; })
     .on('mouseover', function(d) {
       if(!mousedown_node || d === mousedown_node) return;
       // enlarge target node
@@ -368,10 +383,7 @@ function keydown() {
       restart();
       break;
     case 82: // R
-      if(selected_node) {
-        // toggle node reflexivity
-        selected_node.reflexive = !selected_node.reflexive;
-      } else if(selected_link) {
+      if(selected_link) {
         // set link direction to right only
         selected_link.left = false;
         selected_link.right = true;
@@ -395,12 +407,7 @@ function keyup() {
 
 // creates the actual node
 function createNode(videoDetails){
-  // remove reflexivity (highlighting) from last node
-  // check for first node
-  if(lastNodeId != -1){
-    nodes[lastNodeId].reflexive = false;
-  }
-  node = {id: ++lastNodeId, description: videoDetails[0], thumbnail: videoDetails[1], url: videoDetails[2], reflexive: true};
+  node = {id: ++lastNodeId, description: videoDetails[0], thumbnail: videoDetails[1], url: videoDetails[2]};
   // not the nicest appearance idea but works for the moment
   node.x = 100;
   node.y = 100;
@@ -431,15 +438,6 @@ function setGraph(graph){
   links = graph.links;
   nodes = graph.nodes;
   lastNodeId = nodes.length - 1;
-  initForce();
+  initGraph();
   restart();
 }
-
-// app starts here
-svg.on('mousedown', mousedown)
-  .on('mousemove', mousemove)
-  .on('mouseup', mouseup);
-d3.select(window)
-  .on('keydown', keydown)
-  .on('keyup', keyup);
-initForce();
