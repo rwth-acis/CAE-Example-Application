@@ -1,4 +1,4 @@
-<project name="LAS2peerVideoListService" default="all" basedir="."
+<project name="LAS2peerLoadStoreService" default="all" basedir="."
   xmlns:ivy="antlib:org.apache.ivy.ant">
 
   <property file="etc/ant_configuration/user.properties" />

@@ -49,7 +49,7 @@ function Las2peerWidgetLibrary(endpointUrl, iwcCallback) {
   }
 
 /**
-* sends an AJAX request to a resource.
+* sends an AJAX request to a resource. 
 * Parameters:
 *   - method: the HTTP method used
 *	- relativePath: the path relative to the client's endpoint URL
