@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
   <ModulePrefs title="Video List"
-    description="A Widget-Frontend for the LAS2peer Video Details Services"
+    description="A Widget-Frontend for the LAS2peer Video List Service"
     author="Peter de Lange" author_email="lange@dbis.rwth-aachen.de"
     width="500" height="600">
 
@@ -79,7 +79,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   <script src="http://open-app.googlecode.com/files/openapp.js"></script>
   <!-- Inter Widget Communication library import-->
   <script src="http://dbis.rwth-aachen.de/gadgets/iwc/lib/iwc.js"></script>
-    <!-- Addotional widget specific imports -->
+    <!-- Additional widget specific imports -->
   <link rel="stylesheet" href="http://localhost:80/videoListWidget/css/style.css">
   <!-- import the client library -->
   <script type="text/javascript" src="http://localhost:80/videoListWidget/js/las2peerWidgetLibrary.js"></script>

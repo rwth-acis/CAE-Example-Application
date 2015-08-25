@@ -85,7 +85,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   <!-- import application script -->
   <script type="text/javascript" src="http://localhost:80/storeLoadWidget/js/applicationScript.js"></script>
 
-  <!-- Addotional widget specific imports -->
+  <!-- Additional widget specific imports -->
   
 </head>
 <body>

@@ -36,10 +36,7 @@ function getVideos() {
               videoDetails[1] = $(this).find("img").attr("src"); // thumbnail
               videoDetails[2] = $(this).find("td").get(4).innerHTML; // videoLink
 
-              // convert to JSON (one cannot sent JS-arrays via intents)
-              videoDetails = JSON.stringify(videoDetails);
-              client.sendIntent("CREATE_NODE", videoDetails);
-
+              sendCreateNode(videoDetails);
             });
           }, function(error) {
             // this is the error callback
@@ -47,6 +44,12 @@ function getVideos() {
             $("#videoTable").html(error);
           })
 };
+
+var sendCreateNode(videoDetails){
+  // convert to JSON (one cannot sent JS-arrays via intents)
+  videoDetails = JSON.stringify(videoDetails);
+  client.sendIntent("CREATE_NODE", videoDetails);
+}
 
 $(document).ready(function() {
   init();

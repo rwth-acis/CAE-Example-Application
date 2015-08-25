@@ -8,7 +8,7 @@ var init = function() {
     // create a node
     if (intent.action == "CREATE_NODE") {
       var videoDetails = $.parseJSON(intent.data);
-      createNode(videoDetails);
+      createNode(videoDetails); // external call
     }
     // send the current graph via IWC so that the load store widget can process
     // it

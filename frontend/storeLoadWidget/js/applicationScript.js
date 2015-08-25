@@ -54,14 +54,7 @@ var init = function() {
   })
 
   $('#newButton').on('click', function() {
-    // construct empty graph
-    currentGraphId = -1;
-    $('#descriptionInput').val("");
-    var graph = {
-      "nodes": "[]",
-      "links": "[]"
-    };
-    sendLoadGraphIntent(graph);
+    sendLoadEmptyGraph();
   })
 }
 
@@ -87,46 +80,53 @@ function storeGraph(graph) {
 
 function loadGraph(id) {
   client.sendRequest("GET", id, "", "application/json", {},
-          function(data, type) {
-            // store id and update the description input field
-            currentGraphId = parseInt(data.graphId);
-            $('#descriptionInput').val(data.description);
-            var graph = {
-              "nodes": data.nodes,
-              "links": data.links
-            };
-            sendLoadGraphIntent(graph);
-          }, function(error) {
-            // this is the error callback
-            console.log(error);
-          })
+      function(data, type) {
+    // store id and update the description input field
+    currentGraphId = parseInt(data.graphId);
+    $('#descriptionInput').val(data.description);
+    var graph = {
+      "nodes": data.nodes,
+      "links": data.links
+    };
+    graph = JSON.stringify(graph);
+    client.sendIntent("LOAD_GRAPH", graph);
+  }, function(error) {
+    // this is the error callback
+    console.log(error);
+  })
 };
 
 function getGraphs() {
   client.sendRequest("GET", "", "", "application/json", {},
-          function(data, type) {
-            // add table rows
-            var graphDetails = [];
-            $.each(data, function(index, value) {
-              graphDetails.push("<tr><td>" + value.graphId + "</td><td>"
-                      + value.description + "</td></tr>");
-            });
-            $("#graphTable").html(graphDetails);
-
-            // make table rows "clickable"
-            $("#graphTable").find("tr").click(function() {
-              // get the id
-              var id = $(this).find("td").get(0).innerHTML;
-              loadGraph(id);
-            });
-          }, function(error) {
-            // this is the error callback
-            console.log(error);
-            $("#graphTable").html(error);
-          })
+      function(data, type) {
+    // add table rows
+    var graphDetails = [];
+    $.each(data, function(index, value) {
+      graphDetails.push("<tr><td>" + value.graphId + "</td><td>"
+        + value.description + "</td></tr>");
+    });
+    $("#graphTable").html(graphDetails);
+    // make table rows "clickable"
+    $("#graphTable").find("tr").click(function() {
+      // get the id
+      var id = $(this).find("td").get(0).innerHTML;
+      loadGraph(id);
+    });
+  }, function(error) {
+    // this is the error callback
+    console.log(error);
+    $("#graphTable").html(error);
+  })
 };
 
-var sendLoadGraphIntent = function(graph) {
+var sendLoadEmptyGraph = function(graph) {
+    // construct empty graph
+    currentGraphId = -1;
+    $('#descriptionInput').val("");
+    var graph = {
+      "nodes": "[]",
+      "links": "[]"
+    };
   // convert to JSON (one cannot sent JS-objects via intents)
   graph = JSON.stringify(graph);
   client.sendIntent("LOAD_GRAPH", graph);

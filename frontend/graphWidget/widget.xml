@@ -85,7 +85,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   <!-- import application script -->
   <script src="http://localhost:80/graphWidget/js/applicationScript.js"></script>
 
-  <!-- Addotional widget specific imports -->
+  <!-- Additional widget specific imports -->
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="http://localhost:80/graphWidget/js/graph.js"></script>
   
