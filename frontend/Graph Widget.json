@@ -1,0 +1,687 @@
+{
+    "attributes": {
+        "label": {
+            "id": "modelAttributes[label]",
+            "name": "Label",
+            "value": {
+                "id": "modelAttributes[label]",
+                "name": "Label",
+                "value": "Model attributes"
+            }
+        },
+        "left": 0,
+        "top": 0,
+        "width": 0,
+        "height": 0,
+        "zIndex": 0,
+        "type": "ModelAttributesNode",
+        "attributes": {}
+    },
+    "nodes": {
+        "2047496fd26334f92a18e725": {
+            "label": {
+                "id": "2047496fd26334f92a18e725[name]",
+                "name": "name",
+                "value": {
+                    "id": "2047496fd26334f92a18e725[name]",
+                    "name": "name",
+                    "value": "Graph Widget"
+                }
+            },
+            "left": 4632,
+            "top": 4365,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16001,
+            "type": "Widget",
+            "attributes": {
+                "8429a9c1eb8ecdc2b1dbd097": {
+                    "id": "2047496fd26334f92a18e725[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "2047496fd26334f92a18e725[name]",
+                        "name": "name",
+                        "value": "Graph Widget"
+                    }
+                },
+                "22c9ff8652e8f0c06d062b02": {
+                    "id": "2047496fd26334f92a18e725[description]",
+                    "name": "description",
+                    "value": {
+                        "id": "2047496fd26334f92a18e725[description]",
+                        "name": "description",
+                        "value": "A Widget-Frontend for drawing simple Graphs"
+                    }
+                },
+                "46981b3227d71acbe05331bf": {
+                    "id": "2047496fd26334f92a18e725[developername]",
+                    "name": "developerName",
+                    "value": {
+                        "id": "2047496fd26334f92a18e725[developername]",
+                        "name": "developerName",
+                        "value": "Peter de Lange"
+                    }
+                },
+                "140cc72cc3228a273326c450": {
+                    "id": "2047496fd26334f92a18e725[developermail]",
+                    "name": "developerMail",
+                    "value": {
+                        "id": "2047496fd26334f92a18e725[developermail]",
+                        "name": "developerMail",
+                        "value": "lange@dbis.rwth-aachen.de"
+                    }
+                },
+                "e21ce18ca763e433fcb16546": {
+                    "id": "2047496fd26334f92a18e725[width]",
+                    "name": "width",
+                    "value": {
+                        "id": "2047496fd26334f92a18e725[width]",
+                        "name": "width",
+                        "value": "800"
+                    }
+                },
+                "d36e79e0c322818ddcefd09c": {
+                    "id": "2047496fd26334f92a18e725[height]",
+                    "name": "height",
+                    "value": {
+                        "id": "2047496fd26334f92a18e725[height]",
+                        "name": "height",
+                        "value": "600"
+                    }
+                },
+                "0eb8e4a4a056d7198eb90eed": {
+                    "id": "2047496fd26334f92a18e725[microserviceaddress]",
+                    "name": "microserviceAddress",
+                    "value": {
+                        "id": "2047496fd26334f92a18e725[microserviceaddress]",
+                        "name": "microserviceAddress",
+                        "value": "null"
+                    }
+                }
+            }
+        },
+        "cd70612ec37cbb1b7228d9e9": {
+            "label": {
+                "id": "cd70612ec37cbb1b7228d9e9[label]",
+                "name": "Label",
+                "value": {
+                    "id": "cd70612ec37cbb1b7228d9e9[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "left": 4445,
+            "top": 4306,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16002,
+            "type": "HTML Element",
+            "attributes": {
+                "f8b228ce6cb6e6ca97080624": {
+                    "id": "cd70612ec37cbb1b7228d9e9[type]",
+                    "name": "type",
+                    "value": {
+                        "id": "cd70612ec37cbb1b7228d9e9[type]",
+                        "name": "type",
+                        "value": "div"
+                    }
+                },
+                "d326bc315a5c9e11522b58e5": {
+                    "id": "cd70612ec37cbb1b7228d9e9[id]",
+                    "name": "id",
+                    "value": {
+                        "id": "cd70612ec37cbb1b7228d9e9[id]",
+                        "name": "id",
+                        "value": "graph"
+                    }
+                },
+                "8a1165e52b225727d3c4fd75": {
+                    "id": "cd70612ec37cbb1b7228d9e9[static]",
+                    "name": "static",
+                    "value": {
+                        "id": "cd70612ec37cbb1b7228d9e9[static]",
+                        "name": "static",
+                        "value": true
+                    }
+                },
+                "4a7fa8f9d5c8c37a64832eff": {
+                    "id": "cd70612ec37cbb1b7228d9e9[collaborative]",
+                    "name": "collaborative",
+                    "value": {
+                        "id": "cd70612ec37cbb1b7228d9e9[collaborative]",
+                        "name": "collaborative",
+                        "value": false
+                    }
+                }
+            }
+        },
+        "6d71827abcb3c61254e3d7a5": {
+            "label": {
+                "id": "6d71827abcb3c61254e3d7a5[name]",
+                "name": "name",
+                "value": {
+                    "id": "6d71827abcb3c61254e3d7a5[name]",
+                    "name": "name",
+                    "value": "sendPlaybackVideoRequest"
+                }
+            },
+            "left": 4764,
+            "top": 4512,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16003,
+            "type": "Function",
+            "attributes": {
+                "919c6c03fb051f16d8fef15f": {
+                    "id": "6d71827abcb3c61254e3d7a5[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "6d71827abcb3c61254e3d7a5[name]",
+                        "name": "name",
+                        "value": "sendPlaybackVideoRequest"
+                    }
+                },
+                "9cdca7cf182676e04bfd0a0b": {
+                    "id": "6d71827abcb3c61254e3d7a5[returnparameter]",
+                    "name": "returnParameter",
+                    "value": {
+                        "id": "6d71827abcb3c61254e3d7a5[returnparameter]",
+                        "name": "returnParameter",
+                        "value": ""
+                    }
+                }
+            }
+        },
+        "bd2bf9f26810aac66eb6d74a": {
+            "label": {
+                "id": "bd2bf9f26810aac66eb6d74a[name]",
+                "name": "name",
+                "value": {
+                    "id": "bd2bf9f26810aac66eb6d74a[name]",
+                    "name": "name",
+                    "value": "sendGraph"
+                }
+            },
+            "left": 4606,
+            "top": 4625,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16004,
+            "type": "Function",
+            "attributes": {
+                "919c6c03fb051f16d8fef15f": {
+                    "id": "bd2bf9f26810aac66eb6d74a[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "bd2bf9f26810aac66eb6d74a[name]",
+                        "name": "name",
+                        "value": "sendGraph"
+                    }
+                },
+                "9cdca7cf182676e04bfd0a0b": {
+                    "id": "bd2bf9f26810aac66eb6d74a[returnparameter]",
+                    "name": "returnParameter",
+                    "value": {
+                        "id": "bd2bf9f26810aac66eb6d74a[returnparameter]",
+                        "name": "returnParameter",
+                        "value": ""
+                    }
+                }
+            }
+        },
+        "17c7de349ae5a416d975d26f": {
+            "label": {
+                "id": "17c7de349ae5a416d975d26f[label]",
+                "name": "Label",
+                "value": {
+                    "id": "17c7de349ae5a416d975d26f[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "left": 5066,
+            "top": 4484,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16006,
+            "type": "IWC Response",
+            "attributes": {
+                "181d0177c3bfcc27ca3c9535": {
+                    "id": "17c7de349ae5a416d975d26f[intentaction]",
+                    "name": "intentAction",
+                    "value": {
+                        "id": "17c7de349ae5a416d975d26f[intentaction]",
+                        "name": "intentAction",
+                        "value": "CREATE_NODE"
+                    }
+                },
+                "4392a3a0cbaafd160c127c7b": {
+                    "id": "17c7de349ae5a416d975d26f[content]",
+                    "name": "content",
+                    "value": {
+                        "id": "17c7de349ae5a416d975d26f[content]",
+                        "name": "content",
+                        "value": "videoDetails"
+                    }
+                }
+            }
+        },
+        "67c2eabaf187cf3f5cf099eb": {
+            "label": {
+                "id": "67c2eabaf187cf3f5cf099eb[name]",
+                "name": "name",
+                "value": {
+                    "id": "67c2eabaf187cf3f5cf099eb[name]",
+                    "name": "name",
+                    "value": "createNode"
+                }
+            },
+            "left": 4847,
+            "top": 4384,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16007,
+            "type": "Function",
+            "attributes": {
+                "919c6c03fb051f16d8fef15f": {
+                    "id": "67c2eabaf187cf3f5cf099eb[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "67c2eabaf187cf3f5cf099eb[name]",
+                        "name": "name",
+                        "value": "createNode"
+                    }
+                },
+                "9cdca7cf182676e04bfd0a0b": {
+                    "id": "67c2eabaf187cf3f5cf099eb[returnparameter]",
+                    "name": "returnParameter",
+                    "value": {
+                        "id": "67c2eabaf187cf3f5cf099eb[returnparameter]",
+                        "name": "returnParameter",
+                        "value": ""
+                    }
+                }
+            }
+        },
+        "f7777668dd2b223cb4bcb1a9": {
+            "label": {
+                "id": "f7777668dd2b223cb4bcb1a9[label]",
+                "name": "Label",
+                "value": {
+                    "id": "f7777668dd2b223cb4bcb1a9[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "left": 4771,
+            "top": 4723,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16008,
+            "type": "IWC Response",
+            "attributes": {
+                "181d0177c3bfcc27ca3c9535": {
+                    "id": "f7777668dd2b223cb4bcb1a9[intentaction]",
+                    "name": "intentAction",
+                    "value": {
+                        "id": "f7777668dd2b223cb4bcb1a9[intentaction]",
+                        "name": "intentAction",
+                        "value": "STORE_GRAPH"
+                    }
+                },
+                "4392a3a0cbaafd160c127c7b": {
+                    "id": "f7777668dd2b223cb4bcb1a9[content]",
+                    "name": "content",
+                    "value": {
+                        "id": "f7777668dd2b223cb4bcb1a9[content]",
+                        "name": "content",
+                        "value": "graph"
+                    }
+                }
+            }
+        },
+        "2467e6d458cc431a38b75594": {
+            "label": {
+                "id": "2467e6d458cc431a38b75594[label]",
+                "name": "Label",
+                "value": {
+                    "id": "2467e6d458cc431a38b75594[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "left": 4241,
+            "top": 4418,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16009,
+            "type": "IWC Response",
+            "attributes": {
+                "181d0177c3bfcc27ca3c9535": {
+                    "id": "2467e6d458cc431a38b75594[intentaction]",
+                    "name": "intentAction",
+                    "value": {
+                        "id": "2467e6d458cc431a38b75594[intentaction]",
+                        "name": "intentAction",
+                        "value": "LOAD_GRAPH"
+                    }
+                },
+                "4392a3a0cbaafd160c127c7b": {
+                    "id": "2467e6d458cc431a38b75594[content]",
+                    "name": "content",
+                    "value": {
+                        "id": "2467e6d458cc431a38b75594[content]",
+                        "name": "content",
+                        "value": "graph"
+                    }
+                }
+            }
+        },
+        "b99478dd1733818c2e58a34b": {
+            "label": {
+                "id": "b99478dd1733818c2e58a34b[name]",
+                "name": "name",
+                "value": {
+                    "id": "b99478dd1733818c2e58a34b[name]",
+                    "name": "name",
+                    "value": "setGraph"
+                }
+            },
+            "left": 4283,
+            "top": 4551,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16010,
+            "type": "Function",
+            "attributes": {
+                "919c6c03fb051f16d8fef15f": {
+                    "id": "b99478dd1733818c2e58a34b[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "b99478dd1733818c2e58a34b[name]",
+                        "name": "name",
+                        "value": "setGraph"
+                    }
+                },
+                "9cdca7cf182676e04bfd0a0b": {
+                    "id": "b99478dd1733818c2e58a34b[returnparameter]",
+                    "name": "returnParameter",
+                    "value": {
+                        "id": "b99478dd1733818c2e58a34b[returnparameter]",
+                        "name": "returnParameter",
+                        "value": ""
+                    }
+                }
+            }
+        },
+        "619088d0d38e12c304c6dac2": {
+            "label": {
+                "id": "619088d0d38e12c304c6dac2[label]",
+                "name": "Label",
+                "value": {
+                    "id": "619088d0d38e12c304c6dac2[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "left": 4510,
+            "top": 4704,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16011,
+            "type": "IWC Call",
+            "attributes": {
+                "68f96ac4cd5abc379fd65aba": {
+                    "id": "619088d0d38e12c304c6dac2[intentaction]",
+                    "name": "intentAction",
+                    "value": {
+                        "id": "619088d0d38e12c304c6dac2[intentaction]",
+                        "name": "intentAction",
+                        "value": "RETURN_GRAPH"
+                    }
+                },
+                "4c047ef2a06f415381585a45": {
+                    "id": "619088d0d38e12c304c6dac2[content]",
+                    "name": "content",
+                    "value": {
+                        "id": "619088d0d38e12c304c6dac2[content]",
+                        "name": "content",
+                        "value": "graph"
+                    }
+                }
+            }
+        },
+        "1c974191d354efe24b83798d": {
+            "label": {
+                "id": "1c974191d354efe24b83798d[name]",
+                "name": "name",
+                "value": {
+                    "id": "1c974191d354efe24b83798d[name]",
+                    "name": "name",
+                    "value": "videoDetails"
+                }
+            },
+            "left": 4948,
+            "top": 4525,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16013,
+            "type": "Input Parameter",
+            "attributes": {
+                "170b28736e01825bb6ebb131": {
+                    "id": "1c974191d354efe24b83798d[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "1c974191d354efe24b83798d[name]",
+                        "name": "name",
+                        "value": "videoDetails"
+                    }
+                }
+            }
+        },
+        "69c22ea3d207dc8859ad81a0": {
+            "label": {
+                "id": "69c22ea3d207dc8859ad81a0[label]",
+                "name": "Label",
+                "value": {
+                    "id": "69c22ea3d207dc8859ad81a0[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "left": 4852,
+            "top": 4627,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16014,
+            "type": "IWC Call",
+            "attributes": {
+                "68f96ac4cd5abc379fd65aba": {
+                    "id": "69c22ea3d207dc8859ad81a0[intentaction]",
+                    "name": "intentAction",
+                    "value": {
+                        "id": "69c22ea3d207dc8859ad81a0[intentaction]",
+                        "name": "intentAction",
+                        "value": "PLAYBACK_VIDEO"
+                    }
+                },
+                "4c047ef2a06f415381585a45": {
+                    "id": "69c22ea3d207dc8859ad81a0[content]",
+                    "name": "content",
+                    "value": {
+                        "id": "69c22ea3d207dc8859ad81a0[content]",
+                        "name": "content",
+                        "value": "videoDetails"
+                    }
+                }
+            }
+        }
+    },
+    "edges": {
+        "7cb5436a9f6aeaba9956d734": {
+            "label": {
+                "id": "7cb5436a9f6aeaba9956d734[label]",
+                "name": "Label",
+                "value": {
+                    "id": "7cb5436a9f6aeaba9956d734[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "2047496fd26334f92a18e725",
+            "target": "cd70612ec37cbb1b7228d9e9",
+            "attributes": {},
+            "type": "Widget to HTML Element"
+        },
+        "898f2a27752ba34c8fb95e5a": {
+            "label": {
+                "id": "898f2a27752ba34c8fb95e5a[label]",
+                "name": "Label",
+                "value": {
+                    "id": "898f2a27752ba34c8fb95e5a[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "2047496fd26334f92a18e725",
+            "target": "6d71827abcb3c61254e3d7a5",
+            "attributes": {},
+            "type": "Widget to Function"
+        },
+        "31dfd5715bacd05d24c6a125": {
+            "label": {
+                "id": "31dfd5715bacd05d24c6a125[label]",
+                "name": "Label",
+                "value": {
+                    "id": "31dfd5715bacd05d24c6a125[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "2047496fd26334f92a18e725",
+            "target": "bd2bf9f26810aac66eb6d74a",
+            "attributes": {},
+            "type": "Widget to Function"
+        },
+        "a6340764df36e27e54e132d0": {
+            "label": {
+                "id": "a6340764df36e27e54e132d0[label]",
+                "name": "Label",
+                "value": {
+                    "id": "a6340764df36e27e54e132d0[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "67c2eabaf187cf3f5cf099eb",
+            "target": "17c7de349ae5a416d975d26f",
+            "attributes": {},
+            "type": "Waits for"
+        },
+        "3f5b2c3e4cf54f351a0b558e": {
+            "label": {
+                "id": "3f5b2c3e4cf54f351a0b558e[label]",
+                "name": "Label",
+                "value": {
+                    "id": "3f5b2c3e4cf54f351a0b558e[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "2047496fd26334f92a18e725",
+            "target": "67c2eabaf187cf3f5cf099eb",
+            "attributes": {},
+            "type": "Widget to Function"
+        },
+        "658fac1d983b8612fe786216": {
+            "label": {
+                "id": "658fac1d983b8612fe786216[label]",
+                "name": "Label",
+                "value": {
+                    "id": "658fac1d983b8612fe786216[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "bd2bf9f26810aac66eb6d74a",
+            "target": "f7777668dd2b223cb4bcb1a9",
+            "attributes": {},
+            "type": "Waits for"
+        },
+        "a16fade66a2bf69f572c3357": {
+            "label": {
+                "id": "a16fade66a2bf69f572c3357[label]",
+                "name": "Label",
+                "value": {
+                    "id": "a16fade66a2bf69f572c3357[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "b99478dd1733818c2e58a34b",
+            "target": "2467e6d458cc431a38b75594",
+            "attributes": {},
+            "type": "Waits for"
+        },
+        "5c1d2ed9ba226eabd9836858": {
+            "label": {
+                "id": "5c1d2ed9ba226eabd9836858[label]",
+                "name": "Label",
+                "value": {
+                    "id": "5c1d2ed9ba226eabd9836858[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "2047496fd26334f92a18e725",
+            "target": "b99478dd1733818c2e58a34b",
+            "attributes": {},
+            "type": "Widget to Function"
+        },
+        "c3cca15aded9b1102f5ef0a5": {
+            "label": {
+                "id": "c3cca15aded9b1102f5ef0a5[label]",
+                "name": "Label",
+                "value": {
+                    "id": "c3cca15aded9b1102f5ef0a5[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "bd2bf9f26810aac66eb6d74a",
+            "target": "619088d0d38e12c304c6dac2",
+            "attributes": {},
+            "type": "Initiates"
+        },
+        "ba2b91cbf884ed864fc2c8d7": {
+            "label": {
+                "id": "ba2b91cbf884ed864fc2c8d7[label]",
+                "name": "Label",
+                "value": {
+                    "id": "ba2b91cbf884ed864fc2c8d7[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "6d71827abcb3c61254e3d7a5",
+            "target": "1c974191d354efe24b83798d",
+            "attributes": {},
+            "type": "Parameter Connection"
+        },
+        "9d94489269fe5be8c9171f7f": {
+            "label": {
+                "id": "9d94489269fe5be8c9171f7f[label]",
+                "name": "Label",
+                "value": {
+                    "id": "9d94489269fe5be8c9171f7f[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "6d71827abcb3c61254e3d7a5",
+            "target": "69c22ea3d207dc8859ad81a0",
+            "attributes": {},
+            "type": "Initiates"
+        }
+    }
+}

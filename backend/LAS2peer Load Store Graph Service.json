@@ -1,0 +1,1283 @@
+{
+    "attributes": {
+        "label": {
+            "id": "modelAttributes[label]",
+            "name": "Label",
+            "value": {
+                "id": "modelAttributes[label]",
+                "name": "Label",
+                "value": "Model attributes"
+            }
+        },
+        "left": 0,
+        "top": 0,
+        "width": 0,
+        "height": 0,
+        "zIndex": 0,
+        "type": "ModelAttributesNode",
+        "attributes": {}
+    },
+    "nodes": {
+        "e22db184ed7838a60e0024c0": {
+            "label": {
+                "id": "e22db184ed7838a60e0024c0[name]",
+                "name": "name",
+                "value": {
+                    "id": "e22db184ed7838a60e0024c0[name]",
+                    "name": "name",
+                    "value": "LoadStoreGraphService"
+                }
+            },
+            "left": 4162,
+            "top": 4436,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16001,
+            "type": "RESTful Resource",
+            "attributes": {
+                "01066441480b193ed0a7f2fb": {
+                    "id": "e22db184ed7838a60e0024c0[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "e22db184ed7838a60e0024c0[name]",
+                        "name": "name",
+                        "value": "LoadStoreGraphService"
+                    }
+                },
+                "ea51d222c829d18b58776aba": {
+                    "id": "e22db184ed7838a60e0024c0[path]",
+                    "name": "path",
+                    "value": {
+                        "id": "e22db184ed7838a60e0024c0[path]",
+                        "name": "path",
+                        "value": "http://localhost:8081/graphs"
+                    }
+                },
+                "a13682cbfa5e2550bc2d9665": {
+                    "id": "e22db184ed7838a60e0024c0[developer]",
+                    "name": "developer",
+                    "value": {
+                        "id": "e22db184ed7838a60e0024c0[developer]",
+                        "name": "developer",
+                        "value": "Peter de Lange"
+                    }
+                }
+            }
+        },
+        "fcda8cd5efe2547de53ad7ce": {
+            "label": {
+                "id": "fcda8cd5efe2547de53ad7ce[name]",
+                "name": "name",
+                "value": {
+                    "id": "fcda8cd5efe2547de53ad7ce[name]",
+                    "name": "name",
+                    "value": "graphs"
+                }
+            },
+            "left": 3802,
+            "top": 4404,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16002,
+            "type": "Table",
+            "attributes": {
+                "0e4778a9503fa233643f181b": {
+                    "id": "fcda8cd5efe2547de53ad7ce[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "fcda8cd5efe2547de53ad7ce[name]",
+                        "name": "name",
+                        "value": "graphs"
+                    }
+                }
+            }
+        },
+        "8cb17f10145f0eef7c853f78": {
+            "label": {
+                "id": "8cb17f10145f0eef7c853f78[name]",
+                "name": "name",
+                "value": {
+                    "id": "8cb17f10145f0eef7c853f78[name]",
+                    "name": "name",
+                    "value": "My Database"
+                }
+            },
+            "left": 3935,
+            "top": 4326,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16003,
+            "type": "Database",
+            "attributes": {
+                "e51ba4a23c2a365ea3c19524": {
+                    "id": "8cb17f10145f0eef7c853f78[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "8cb17f10145f0eef7c853f78[name]",
+                        "name": "name",
+                        "value": "My Database"
+                    }
+                },
+                "6b65056ce103a7694313c000": {
+                    "id": "8cb17f10145f0eef7c853f78[address]",
+                    "name": "address",
+                    "value": {
+                        "id": "8cb17f10145f0eef7c853f78[address]",
+                        "name": "address",
+                        "value": "localhost:3306/"
+                    }
+                },
+                "aad60739e22f44e585e5bcc1": {
+                    "id": "8cb17f10145f0eef7c853f78[schema]",
+                    "name": "schema",
+                    "value": {
+                        "id": "8cb17f10145f0eef7c853f78[schema]",
+                        "name": "schema",
+                        "value": "commedit"
+                    }
+                },
+                "581b9959c0268321f2cfc486": {
+                    "id": "8cb17f10145f0eef7c853f78[loginname]",
+                    "name": "loginName",
+                    "value": {
+                        "id": "8cb17f10145f0eef7c853f78[loginname]",
+                        "name": "loginName",
+                        "value": "commedit"
+                    }
+                },
+                "3e931502ed43d14143eb80ac": {
+                    "id": "8cb17f10145f0eef7c853f78[loginpassword]",
+                    "name": "loginPassword",
+                    "value": {
+                        "id": "8cb17f10145f0eef7c853f78[loginpassword]",
+                        "name": "loginPassword",
+                        "value": "somePass"
+                    }
+                }
+            }
+        },
+        "57e140571082c483455570ce": {
+            "label": {
+                "id": "57e140571082c483455570ce[name]",
+                "name": "name",
+                "value": {
+                    "id": "57e140571082c483455570ce[name]",
+                    "name": "name",
+                    "value": "loadGraph"
+                }
+            },
+            "left": 4334,
+            "top": 4553,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16004,
+            "type": "HTTP Method",
+            "attributes": {
+                "775bc7f84fc4aa87958e9c4a": {
+                    "id": "57e140571082c483455570ce[methodtype]",
+                    "name": "methodType",
+                    "value": {
+                        "id": "57e140571082c483455570ce[methodtype]",
+                        "name": "methodType",
+                        "value": "GET"
+                    }
+                },
+                "27449d18b985b2deccf00dd1": {
+                    "id": "57e140571082c483455570ce[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "57e140571082c483455570ce[name]",
+                        "name": "name",
+                        "value": "loadGraph"
+                    }
+                },
+                "ad73bfc5c5c852148f4be259": {
+                    "id": "57e140571082c483455570ce[path]",
+                    "name": "path",
+                    "value": {
+                        "id": "57e140571082c483455570ce[path]",
+                        "name": "path",
+                        "value": "{id}"
+                    }
+                }
+            }
+        },
+        "204862853421f3f640bb7e1f": {
+            "label": {
+                "id": "204862853421f3f640bb7e1f[name]",
+                "name": "name",
+                "value": {
+                    "id": "204862853421f3f640bb7e1f[name]",
+                    "name": "name",
+                    "value": "storeGraph"
+                }
+            },
+            "left": 4403,
+            "top": 4324,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16005,
+            "type": "HTTP Method",
+            "attributes": {
+                "775bc7f84fc4aa87958e9c4a": {
+                    "id": "204862853421f3f640bb7e1f[methodtype]",
+                    "name": "methodType",
+                    "value": {
+                        "id": "204862853421f3f640bb7e1f[methodtype]",
+                        "name": "methodType",
+                        "value": "POST"
+                    }
+                },
+                "27449d18b985b2deccf00dd1": {
+                    "id": "204862853421f3f640bb7e1f[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "204862853421f3f640bb7e1f[name]",
+                        "name": "name",
+                        "value": "storeGraph"
+                    }
+                },
+                "ad73bfc5c5c852148f4be259": {
+                    "id": "204862853421f3f640bb7e1f[path]",
+                    "name": "path",
+                    "value": {
+                        "id": "204862853421f3f640bb7e1f[path]",
+                        "name": "path",
+                        "value": ""
+                    }
+                }
+            }
+        },
+        "fb28bf03591e3282435ec0d1": {
+            "label": {
+                "id": "fb28bf03591e3282435ec0d1[name]",
+                "name": "name",
+                "value": {
+                    "id": "fb28bf03591e3282435ec0d1[name]",
+                    "name": "name",
+                    "value": "getGraphList"
+                }
+            },
+            "left": 3947,
+            "top": 4517,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16006,
+            "type": "HTTP Method",
+            "attributes": {
+                "775bc7f84fc4aa87958e9c4a": {
+                    "id": "fb28bf03591e3282435ec0d1[methodtype]",
+                    "name": "methodType",
+                    "value": {
+                        "id": "fb28bf03591e3282435ec0d1[methodtype]",
+                        "name": "methodType",
+                        "value": "GET"
+                    }
+                },
+                "27449d18b985b2deccf00dd1": {
+                    "id": "fb28bf03591e3282435ec0d1[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "fb28bf03591e3282435ec0d1[name]",
+                        "name": "name",
+                        "value": "getGraphList"
+                    }
+                },
+                "ad73bfc5c5c852148f4be259": {
+                    "id": "fb28bf03591e3282435ec0d1[path]",
+                    "name": "path",
+                    "value": {
+                        "id": "fb28bf03591e3282435ec0d1[path]",
+                        "name": "path",
+                        "value": ""
+                    }
+                }
+            }
+        },
+        "43e4110a9235f9030f7300bf": {
+            "label": {
+                "id": "43e4110a9235f9030f7300bf[name]",
+                "name": "name",
+                "value": {
+                    "id": "43e4110a9235f9030f7300bf[name]",
+                    "name": "name",
+                    "value": "graphListAsJsonArray"
+                }
+            },
+            "left": 3839,
+            "top": 4619,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16007,
+            "type": "HTTP Response",
+            "attributes": {
+                "db08a187c056423bd281043a": {
+                    "id": "43e4110a9235f9030f7300bf[returnstatuscode]",
+                    "name": "returnStatusCode",
+                    "value": {
+                        "id": "43e4110a9235f9030f7300bf[returnstatuscode]",
+                        "name": "returnStatusCode",
+                        "value": "OK"
+                    }
+                },
+                "f3e3f9b0293882dedca189fd": {
+                    "id": "43e4110a9235f9030f7300bf[resulttype]",
+                    "name": "resultType",
+                    "value": {
+                        "id": "43e4110a9235f9030f7300bf[resulttype]",
+                        "name": "resultType",
+                        "value": "JSON"
+                    }
+                },
+                "9999d7ad7c37c05875b482ad": {
+                    "id": "43e4110a9235f9030f7300bf[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "43e4110a9235f9030f7300bf[name]",
+                        "name": "name",
+                        "value": "graphListAsJsonArray"
+                    }
+                },
+                "8af642e87c996f845deec406": {
+                    "id": "43e4110a9235f9030f7300bf[resultname]",
+                    "name": "resultName",
+                    "value": {
+                        "id": "43e4110a9235f9030f7300bf[resultname]",
+                        "name": "resultName",
+                        "value": "graphList"
+                    }
+                }
+            }
+        },
+        "9a4f1e489a71bba8f2b42d7d": {
+            "label": {
+                "id": "9a4f1e489a71bba8f2b42d7d[name]",
+                "name": "name",
+                "value": {
+                    "id": "9a4f1e489a71bba8f2b42d7d[name]",
+                    "name": "name",
+                    "value": "noGraphExists"
+                }
+            },
+            "left": 3967,
+            "top": 4607,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16010,
+            "type": "HTTP Response",
+            "attributes": {
+                "db08a187c056423bd281043a": {
+                    "id": "9a4f1e489a71bba8f2b42d7d[returnstatuscode]",
+                    "name": "returnStatusCode",
+                    "value": {
+                        "id": "9a4f1e489a71bba8f2b42d7d[returnstatuscode]",
+                        "name": "returnStatusCode",
+                        "value": "NOT_FOUND"
+                    }
+                },
+                "f3e3f9b0293882dedca189fd": {
+                    "id": "9a4f1e489a71bba8f2b42d7d[resulttype]",
+                    "name": "resultType",
+                    "value": {
+                        "id": "9a4f1e489a71bba8f2b42d7d[resulttype]",
+                        "name": "resultType",
+                        "value": "TEXT"
+                    }
+                },
+                "9999d7ad7c37c05875b482ad": {
+                    "id": "9a4f1e489a71bba8f2b42d7d[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "9a4f1e489a71bba8f2b42d7d[name]",
+                        "name": "name",
+                        "value": "noGraphExists"
+                    }
+                },
+                "8af642e87c996f845deec406": {
+                    "id": "9a4f1e489a71bba8f2b42d7d[resultname]",
+                    "name": "resultName",
+                    "value": {
+                        "id": "9a4f1e489a71bba8f2b42d7d[resultname]",
+                        "name": "resultName",
+                        "value": "er"
+                    }
+                }
+            }
+        },
+        "650761bd8b31c2390cf0edbb": {
+            "label": {
+                "id": "650761bd8b31c2390cf0edbb[name]",
+                "name": "name",
+                "value": {
+                    "id": "650761bd8b31c2390cf0edbb[name]",
+                    "name": "name",
+                    "value": "internalError"
+                }
+            },
+            "left": 4118,
+            "top": 4565,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16011,
+            "type": "HTTP Response",
+            "attributes": {
+                "db08a187c056423bd281043a": {
+                    "id": "650761bd8b31c2390cf0edbb[returnstatuscode]",
+                    "name": "returnStatusCode",
+                    "value": {
+                        "id": "650761bd8b31c2390cf0edbb[returnstatuscode]",
+                        "name": "returnStatusCode",
+                        "value": "INTERNAL_ERROR"
+                    }
+                },
+                "f3e3f9b0293882dedca189fd": {
+                    "id": "650761bd8b31c2390cf0edbb[resulttype]",
+                    "name": "resultType",
+                    "value": {
+                        "id": "650761bd8b31c2390cf0edbb[resulttype]",
+                        "name": "resultType",
+                        "value": "TEXT"
+                    }
+                },
+                "9999d7ad7c37c05875b482ad": {
+                    "id": "650761bd8b31c2390cf0edbb[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "650761bd8b31c2390cf0edbb[name]",
+                        "name": "name",
+                        "value": "internalError"
+                    }
+                },
+                "8af642e87c996f845deec406": {
+                    "id": "650761bd8b31c2390cf0edbb[resultname]",
+                    "name": "resultName",
+                    "value": {
+                        "id": "650761bd8b31c2390cf0edbb[resultname]",
+                        "name": "resultName",
+                        "value": "er"
+                    }
+                }
+            }
+        },
+        "3903208f395afdf18e06732a": {
+            "label": {
+                "id": "3903208f395afdf18e06732a[name]",
+                "name": "name",
+                "value": {
+                    "id": "3903208f395afdf18e06732a[name]",
+                    "name": "name",
+                    "value": "graphLoaded"
+                }
+            },
+            "left": 4219,
+            "top": 4655,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16012,
+            "type": "HTTP Response",
+            "attributes": {
+                "db08a187c056423bd281043a": {
+                    "id": "3903208f395afdf18e06732a[returnstatuscode]",
+                    "name": "returnStatusCode",
+                    "value": {
+                        "id": "3903208f395afdf18e06732a[returnstatuscode]",
+                        "name": "returnStatusCode",
+                        "value": "OK"
+                    }
+                },
+                "f3e3f9b0293882dedca189fd": {
+                    "id": "3903208f395afdf18e06732a[resulttype]",
+                    "name": "resultType",
+                    "value": {
+                        "id": "3903208f395afdf18e06732a[resulttype]",
+                        "name": "resultType",
+                        "value": "JSON"
+                    }
+                },
+                "9999d7ad7c37c05875b482ad": {
+                    "id": "3903208f395afdf18e06732a[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "3903208f395afdf18e06732a[name]",
+                        "name": "name",
+                        "value": "graphLoaded"
+                    }
+                },
+                "8af642e87c996f845deec406": {
+                    "id": "3903208f395afdf18e06732a[resultname]",
+                    "name": "resultName",
+                    "value": {
+                        "id": "3903208f395afdf18e06732a[resultname]",
+                        "name": "resultName",
+                        "value": "r"
+                    }
+                }
+            }
+        },
+        "b7faf8ee2fe10dd863b3f0c0": {
+            "label": {
+                "id": "b7faf8ee2fe10dd863b3f0c0[name]",
+                "name": "name",
+                "value": {
+                    "id": "b7faf8ee2fe10dd863b3f0c0[name]",
+                    "name": "name",
+                    "value": "graphNotFound"
+                }
+            },
+            "left": 4348,
+            "top": 4658,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16013,
+            "type": "HTTP Response",
+            "attributes": {
+                "db08a187c056423bd281043a": {
+                    "id": "b7faf8ee2fe10dd863b3f0c0[returnstatuscode]",
+                    "name": "returnStatusCode",
+                    "value": {
+                        "id": "b7faf8ee2fe10dd863b3f0c0[returnstatuscode]",
+                        "name": "returnStatusCode",
+                        "value": "NOT_FOUND"
+                    }
+                },
+                "f3e3f9b0293882dedca189fd": {
+                    "id": "b7faf8ee2fe10dd863b3f0c0[resulttype]",
+                    "name": "resultType",
+                    "value": {
+                        "id": "b7faf8ee2fe10dd863b3f0c0[resulttype]",
+                        "name": "resultType",
+                        "value": "TEXT"
+                    }
+                },
+                "9999d7ad7c37c05875b482ad": {
+                    "id": "b7faf8ee2fe10dd863b3f0c0[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "b7faf8ee2fe10dd863b3f0c0[name]",
+                        "name": "name",
+                        "value": "graphNotFound"
+                    }
+                },
+                "8af642e87c996f845deec406": {
+                    "id": "b7faf8ee2fe10dd863b3f0c0[resultname]",
+                    "name": "resultName",
+                    "value": {
+                        "id": "b7faf8ee2fe10dd863b3f0c0[resultname]",
+                        "name": "resultName",
+                        "value": "er"
+                    }
+                }
+            }
+        },
+        "bdb8f41bef51663e4170d25f": {
+            "label": {
+                "id": "bdb8f41bef51663e4170d25f[name]",
+                "name": "name",
+                "value": {
+                    "id": "bdb8f41bef51663e4170d25f[name]",
+                    "name": "name",
+                    "value": "internalError"
+                }
+            },
+            "left": 4515,
+            "top": 4650,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16014,
+            "type": "HTTP Response",
+            "attributes": {
+                "db08a187c056423bd281043a": {
+                    "id": "bdb8f41bef51663e4170d25f[returnstatuscode]",
+                    "name": "returnStatusCode",
+                    "value": {
+                        "id": "bdb8f41bef51663e4170d25f[returnstatuscode]",
+                        "name": "returnStatusCode",
+                        "value": "INTERNAL_ERROR"
+                    }
+                },
+                "f3e3f9b0293882dedca189fd": {
+                    "id": "bdb8f41bef51663e4170d25f[resulttype]",
+                    "name": "resultType",
+                    "value": {
+                        "id": "bdb8f41bef51663e4170d25f[resulttype]",
+                        "name": "resultType",
+                        "value": "TEXT"
+                    }
+                },
+                "9999d7ad7c37c05875b482ad": {
+                    "id": "bdb8f41bef51663e4170d25f[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "bdb8f41bef51663e4170d25f[name]",
+                        "name": "name",
+                        "value": "internalError"
+                    }
+                },
+                "8af642e87c996f845deec406": {
+                    "id": "bdb8f41bef51663e4170d25f[resultname]",
+                    "name": "resultName",
+                    "value": {
+                        "id": "bdb8f41bef51663e4170d25f[resultname]",
+                        "name": "resultName",
+                        "value": "er"
+                    }
+                }
+            }
+        },
+        "286c9cd6d0633a27c0d1be7c": {
+            "label": {
+                "id": "286c9cd6d0633a27c0d1be7c[name]",
+                "name": "name",
+                "value": {
+                    "id": "286c9cd6d0633a27c0d1be7c[name]",
+                    "name": "name",
+                    "value": "id"
+                }
+            },
+            "left": 4461,
+            "top": 4524,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16015,
+            "type": "HTTP Payload",
+            "attributes": {
+                "8df7213c54eef4f73a0b8c50": {
+                    "id": "286c9cd6d0633a27c0d1be7c[payloadtype]",
+                    "name": "payloadType",
+                    "value": {
+                        "id": "286c9cd6d0633a27c0d1be7c[payloadtype]",
+                        "name": "payloadType",
+                        "value": "PATH_PARAM"
+                    }
+                },
+                "abe2c3ae85fb12282c01c67d": {
+                    "id": "286c9cd6d0633a27c0d1be7c[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "286c9cd6d0633a27c0d1be7c[name]",
+                        "name": "name",
+                        "value": "id"
+                    }
+                }
+            }
+        },
+        "f0b8d03dca25caa2be249300": {
+            "label": {
+                "id": "f0b8d03dca25caa2be249300[name]",
+                "name": "name",
+                "value": {
+                    "id": "f0b8d03dca25caa2be249300[name]",
+                    "name": "name",
+                    "value": "graph"
+                }
+            },
+            "left": 4333,
+            "top": 4229,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16016,
+            "type": "HTTP Payload",
+            "attributes": {
+                "8df7213c54eef4f73a0b8c50": {
+                    "id": "f0b8d03dca25caa2be249300[payloadtype]",
+                    "name": "payloadType",
+                    "value": {
+                        "id": "f0b8d03dca25caa2be249300[payloadtype]",
+                        "name": "payloadType",
+                        "value": "JSON"
+                    }
+                },
+                "abe2c3ae85fb12282c01c67d": {
+                    "id": "f0b8d03dca25caa2be249300[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "f0b8d03dca25caa2be249300[name]",
+                        "name": "name",
+                        "value": "graph"
+                    }
+                }
+            }
+        },
+        "543e4d9a9a087db6968e16c7": {
+            "label": {
+                "id": "543e4d9a9a087db6968e16c7[name]",
+                "name": "name",
+                "value": {
+                    "id": "543e4d9a9a087db6968e16c7[name]",
+                    "name": "name",
+                    "value": "graphStored"
+                }
+            },
+            "left": 4522,
+            "top": 4272,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16017,
+            "type": "HTTP Response",
+            "attributes": {
+                "db08a187c056423bd281043a": {
+                    "id": "543e4d9a9a087db6968e16c7[returnstatuscode]",
+                    "name": "returnStatusCode",
+                    "value": {
+                        "id": "543e4d9a9a087db6968e16c7[returnstatuscode]",
+                        "name": "returnStatusCode",
+                        "value": "CREATED"
+                    }
+                },
+                "f3e3f9b0293882dedca189fd": {
+                    "id": "543e4d9a9a087db6968e16c7[resulttype]",
+                    "name": "resultType",
+                    "value": {
+                        "id": "543e4d9a9a087db6968e16c7[resulttype]",
+                        "name": "resultType",
+                        "value": "TEXT"
+                    }
+                },
+                "9999d7ad7c37c05875b482ad": {
+                    "id": "543e4d9a9a087db6968e16c7[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "543e4d9a9a087db6968e16c7[name]",
+                        "name": "name",
+                        "value": "graphStored"
+                    }
+                },
+                "8af642e87c996f845deec406": {
+                    "id": "543e4d9a9a087db6968e16c7[resultname]",
+                    "name": "resultName",
+                    "value": {
+                        "id": "543e4d9a9a087db6968e16c7[resultname]",
+                        "name": "resultName",
+                        "value": "r"
+                    }
+                }
+            }
+        },
+        "41def2bd9de30f114d2d3c95": {
+            "label": {
+                "id": "41def2bd9de30f114d2d3c95[name]",
+                "name": "name",
+                "value": {
+                    "id": "41def2bd9de30f114d2d3c95[name]",
+                    "name": "name",
+                    "value": "internalError"
+                }
+            },
+            "left": 4538,
+            "top": 4376,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16018,
+            "type": "HTTP Response",
+            "attributes": {
+                "db08a187c056423bd281043a": {
+                    "id": "41def2bd9de30f114d2d3c95[returnstatuscode]",
+                    "name": "returnStatusCode",
+                    "value": {
+                        "id": "41def2bd9de30f114d2d3c95[returnstatuscode]",
+                        "name": "returnStatusCode",
+                        "value": "INTERNAL_ERROR"
+                    }
+                },
+                "f3e3f9b0293882dedca189fd": {
+                    "id": "41def2bd9de30f114d2d3c95[resulttype]",
+                    "name": "resultType",
+                    "value": {
+                        "id": "41def2bd9de30f114d2d3c95[resulttype]",
+                        "name": "resultType",
+                        "value": "TEXT"
+                    }
+                },
+                "9999d7ad7c37c05875b482ad": {
+                    "id": "41def2bd9de30f114d2d3c95[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "41def2bd9de30f114d2d3c95[name]",
+                        "name": "name",
+                        "value": "internalError"
+                    }
+                },
+                "8af642e87c996f845deec406": {
+                    "id": "41def2bd9de30f114d2d3c95[resultname]",
+                    "name": "resultName",
+                    "value": {
+                        "id": "41def2bd9de30f114d2d3c95[resultname]",
+                        "name": "resultName",
+                        "value": "er"
+                    }
+                }
+            }
+        },
+        "e7aefb870b1c5436a693948d": {
+            "label": {
+                "id": "e7aefb870b1c5436a693948d[name]",
+                "name": "name",
+                "value": {
+                    "id": "e7aefb870b1c5436a693948d[name]",
+                    "name": "name",
+                    "value": "graphId"
+                }
+            },
+            "left": 3736,
+            "top": 4262,
+            "width": 100,
+            "height": 57,
+            "zIndex": 16019,
+            "type": "Column",
+            "attributes": {
+                "facdb20e5eb3343602a9ddfa": {
+                    "id": "e7aefb870b1c5436a693948d[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "e7aefb870b1c5436a693948d[name]",
+                        "name": "name",
+                        "value": "graphId"
+                    }
+                },
+                "f0569e45ba1f993e4e1f7360": {
+                    "id": "e7aefb870b1c5436a693948d[columntype]",
+                    "name": "columnType",
+                    "value": {
+                        "id": "e7aefb870b1c5436a693948d[columntype]",
+                        "name": "columnType",
+                        "value": "int"
+                    }
+                },
+                "d60f22353db4bd47b1f66a1b": {
+                    "id": "e7aefb870b1c5436a693948d[primarykey]",
+                    "name": "primaryKey",
+                    "value": {
+                        "id": "e7aefb870b1c5436a693948d[primarykey]",
+                        "name": "primaryKey",
+                        "value": true
+                    }
+                }
+            }
+        },
+        "aee4ad43e9ff82abc9939567": {
+            "label": {
+                "id": "aee4ad43e9ff82abc9939567[name]",
+                "name": "name",
+                "value": {
+                    "id": "aee4ad43e9ff82abc9939567[name]",
+                    "name": "name",
+                    "value": "nodes"
+                }
+            },
+            "left": 3671,
+            "top": 4424,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16020,
+            "type": "Column",
+            "attributes": {
+                "facdb20e5eb3343602a9ddfa": {
+                    "id": "aee4ad43e9ff82abc9939567[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "aee4ad43e9ff82abc9939567[name]",
+                        "name": "name",
+                        "value": "nodes"
+                    }
+                },
+                "f0569e45ba1f993e4e1f7360": {
+                    "id": "aee4ad43e9ff82abc9939567[columntype]",
+                    "name": "columnType",
+                    "value": {
+                        "id": "aee4ad43e9ff82abc9939567[columntype]",
+                        "name": "columnType",
+                        "value": "text"
+                    }
+                },
+                "d60f22353db4bd47b1f66a1b": {
+                    "id": "aee4ad43e9ff82abc9939567[primarykey]",
+                    "name": "primaryKey",
+                    "value": {
+                        "id": "aee4ad43e9ff82abc9939567[primarykey]",
+                        "name": "primaryKey",
+                        "value": false
+                    }
+                }
+            }
+        },
+        "6a2b073e1f207de5ef77213a": {
+            "label": {
+                "id": "6a2b073e1f207de5ef77213a[name]",
+                "name": "name",
+                "value": {
+                    "id": "6a2b073e1f207de5ef77213a[name]",
+                    "name": "name",
+                    "value": "links"
+                }
+            },
+            "left": 3694,
+            "top": 4506,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16021,
+            "type": "Column",
+            "attributes": {
+                "facdb20e5eb3343602a9ddfa": {
+                    "id": "6a2b073e1f207de5ef77213a[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "6a2b073e1f207de5ef77213a[name]",
+                        "name": "name",
+                        "value": "links"
+                    }
+                },
+                "f0569e45ba1f993e4e1f7360": {
+                    "id": "6a2b073e1f207de5ef77213a[columntype]",
+                    "name": "columnType",
+                    "value": {
+                        "id": "6a2b073e1f207de5ef77213a[columntype]",
+                        "name": "columnType",
+                        "value": "text"
+                    }
+                },
+                "d60f22353db4bd47b1f66a1b": {
+                    "id": "6a2b073e1f207de5ef77213a[primarykey]",
+                    "name": "primaryKey",
+                    "value": {
+                        "id": "6a2b073e1f207de5ef77213a[primarykey]",
+                        "name": "primaryKey",
+                        "value": false
+                    }
+                }
+            }
+        },
+        "6ba948b995e887d8990304ad": {
+            "label": {
+                "id": "6ba948b995e887d8990304ad[name]",
+                "name": "name",
+                "value": {
+                    "id": "6ba948b995e887d8990304ad[name]",
+                    "name": "name",
+                    "value": "description"
+                }
+            },
+            "left": 3661,
+            "top": 4343,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16022,
+            "type": "Column",
+            "attributes": {
+                "facdb20e5eb3343602a9ddfa": {
+                    "id": "6ba948b995e887d8990304ad[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "6ba948b995e887d8990304ad[name]",
+                        "name": "name",
+                        "value": "description"
+                    }
+                },
+                "f0569e45ba1f993e4e1f7360": {
+                    "id": "6ba948b995e887d8990304ad[columntype]",
+                    "name": "columnType",
+                    "value": {
+                        "id": "6ba948b995e887d8990304ad[columntype]",
+                        "name": "columnType",
+                        "value": "varchar(250)"
+                    }
+                },
+                "d60f22353db4bd47b1f66a1b": {
+                    "id": "6ba948b995e887d8990304ad[primarykey]",
+                    "name": "primaryKey",
+                    "value": {
+                        "id": "6ba948b995e887d8990304ad[primarykey]",
+                        "name": "primaryKey",
+                        "value": false
+                    }
+                }
+            }
+        }
+    },
+    "edges": {
+        "e851b24f1ac979c9951bd193": {
+            "label": {
+                "id": "e851b24f1ac979c9951bd193[label]",
+                "name": "Label",
+                "value": {
+                    "id": "e851b24f1ac979c9951bd193[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "e22db184ed7838a60e0024c0",
+            "target": "8cb17f10145f0eef7c853f78",
+            "attributes": {},
+            "type": "RESTful Resource to Database"
+        },
+        "6f45e646ddcc0def13fbc8a9": {
+            "label": {
+                "id": "6f45e646ddcc0def13fbc8a9[label]",
+                "name": "Label",
+                "value": {
+                    "id": "6f45e646ddcc0def13fbc8a9[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "8cb17f10145f0eef7c853f78",
+            "target": "fcda8cd5efe2547de53ad7ce",
+            "attributes": {},
+            "type": "Database to Table"
+        },
+        "9c58e566ca626829d646c35f": {
+            "label": {
+                "id": "9c58e566ca626829d646c35f[label]",
+                "name": "Label",
+                "value": {
+                    "id": "9c58e566ca626829d646c35f[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "e22db184ed7838a60e0024c0",
+            "target": "fb28bf03591e3282435ec0d1",
+            "attributes": {},
+            "type": "RESTful Resource to HTTP Method"
+        },
+        "ac6cd0a117f6da1a85dd2b1b": {
+            "label": {
+                "id": "ac6cd0a117f6da1a85dd2b1b[label]",
+                "name": "Label",
+                "value": {
+                    "id": "ac6cd0a117f6da1a85dd2b1b[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "e22db184ed7838a60e0024c0",
+            "target": "57e140571082c483455570ce",
+            "attributes": {},
+            "type": "RESTful Resource to HTTP Method"
+        },
+        "d246ad51326a8d16c19ee866": {
+            "label": {
+                "id": "d246ad51326a8d16c19ee866[label]",
+                "name": "Label",
+                "value": {
+                    "id": "d246ad51326a8d16c19ee866[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "e22db184ed7838a60e0024c0",
+            "target": "204862853421f3f640bb7e1f",
+            "attributes": {},
+            "type": "RESTful Resource to HTTP Method"
+        },
+        "3692f19755ce00dc6a269588": {
+            "label": {
+                "id": "3692f19755ce00dc6a269588[label]",
+                "name": "Label",
+                "value": {
+                    "id": "3692f19755ce00dc6a269588[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "fb28bf03591e3282435ec0d1",
+            "target": "9a4f1e489a71bba8f2b42d7d",
+            "attributes": {},
+            "type": "HTTP Method to HTTP Response"
+        },
+        "719e0b28893dbc6bb9870717": {
+            "label": {
+                "id": "719e0b28893dbc6bb9870717[label]",
+                "name": "Label",
+                "value": {
+                    "id": "719e0b28893dbc6bb9870717[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "fb28bf03591e3282435ec0d1",
+            "target": "43e4110a9235f9030f7300bf",
+            "attributes": {},
+            "type": "HTTP Method to HTTP Response"
+        },
+        "150a9649358e6996fbbcbac1": {
+            "label": {
+                "id": "150a9649358e6996fbbcbac1[label]",
+                "name": "Label",
+                "value": {
+                    "id": "150a9649358e6996fbbcbac1[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "fb28bf03591e3282435ec0d1",
+            "target": "650761bd8b31c2390cf0edbb",
+            "attributes": {},
+            "type": "HTTP Method to HTTP Response"
+        },
+        "976f7468d7dc1fdb06592590": {
+            "label": {
+                "id": "976f7468d7dc1fdb06592590[label]",
+                "name": "Label",
+                "value": {
+                    "id": "976f7468d7dc1fdb06592590[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "57e140571082c483455570ce",
+            "target": "286c9cd6d0633a27c0d1be7c",
+            "attributes": {},
+            "type": "HTTP Method to HTTP Payload"
+        },
+        "f9c530c6ff2b0d703b1c74bd": {
+            "label": {
+                "id": "f9c530c6ff2b0d703b1c74bd[label]",
+                "name": "Label",
+                "value": {
+                    "id": "f9c530c6ff2b0d703b1c74bd[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "57e140571082c483455570ce",
+            "target": "3903208f395afdf18e06732a",
+            "attributes": {},
+            "type": "HTTP Method to HTTP Response"
+        },
+        "afa2328409edb1d0f696a39f": {
+            "label": {
+                "id": "afa2328409edb1d0f696a39f[label]",
+                "name": "Label",
+                "value": {
+                    "id": "afa2328409edb1d0f696a39f[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "57e140571082c483455570ce",
+            "target": "b7faf8ee2fe10dd863b3f0c0",
+            "attributes": {},
+            "type": "HTTP Method to HTTP Response"
+        },
+        "6b9ce26f7401116250504035": {
+            "label": {
+                "id": "6b9ce26f7401116250504035[label]",
+                "name": "Label",
+                "value": {
+                    "id": "6b9ce26f7401116250504035[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "57e140571082c483455570ce",
+            "target": "bdb8f41bef51663e4170d25f",
+            "attributes": {},
+            "type": "HTTP Method to HTTP Response"
+        },
+        "38e7e2e16ba6a3ca87f63a8c": {
+            "label": {
+                "id": "38e7e2e16ba6a3ca87f63a8c[label]",
+                "name": "Label",
+                "value": {
+                    "id": "38e7e2e16ba6a3ca87f63a8c[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "204862853421f3f640bb7e1f",
+            "target": "f0b8d03dca25caa2be249300",
+            "attributes": {},
+            "type": "HTTP Method to HTTP Payload"
+        },
+        "1b795cea39e2b86dea30c3d2": {
+            "label": {
+                "id": "1b795cea39e2b86dea30c3d2[label]",
+                "name": "Label",
+                "value": {
+                    "id": "1b795cea39e2b86dea30c3d2[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "204862853421f3f640bb7e1f",
+            "target": "543e4d9a9a087db6968e16c7",
+            "attributes": {},
+            "type": "HTTP Method to HTTP Response"
+        },
+        "c8e26fc31bde386b84526e4c": {
+            "label": {
+                "id": "c8e26fc31bde386b84526e4c[label]",
+                "name": "Label",
+                "value": {
+                    "id": "c8e26fc31bde386b84526e4c[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "204862853421f3f640bb7e1f",
+            "target": "41def2bd9de30f114d2d3c95",
+            "attributes": {},
+            "type": "HTTP Method to HTTP Response"
+        },
+        "ca7a19a8867b33947553a45c": {
+            "label": {
+                "id": "ca7a19a8867b33947553a45c[label]",
+                "name": "Label",
+                "value": {
+                    "id": "ca7a19a8867b33947553a45c[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "fcda8cd5efe2547de53ad7ce",
+            "target": "e7aefb870b1c5436a693948d",
+            "attributes": {},
+            "type": "Table to Column"
+        },
+        "47ebd0020cf6204033394189": {
+            "label": {
+                "id": "47ebd0020cf6204033394189[label]",
+                "name": "Label",
+                "value": {
+                    "id": "47ebd0020cf6204033394189[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "fcda8cd5efe2547de53ad7ce",
+            "target": "aee4ad43e9ff82abc9939567",
+            "attributes": {},
+            "type": "Table to Column"
+        },
+        "50aeec3ae3c352919a0dce5d": {
+            "label": {
+                "id": "50aeec3ae3c352919a0dce5d[label]",
+                "name": "Label",
+                "value": {
+                    "id": "50aeec3ae3c352919a0dce5d[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "fcda8cd5efe2547de53ad7ce",
+            "target": "6a2b073e1f207de5ef77213a",
+            "attributes": {},
+            "type": "Table to Column"
+        },
+        "77da85710ccd9a033e250e09": {
+            "label": {
+                "id": "77da85710ccd9a033e250e09[label]",
+                "name": "Label",
+                "value": {
+                    "id": "77da85710ccd9a033e250e09[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "fcda8cd5efe2547de53ad7ce",
+            "target": "6ba948b995e887d8990304ad",
+            "attributes": {},
+            "type": "Table to Column"
+        }
+    }
+}
