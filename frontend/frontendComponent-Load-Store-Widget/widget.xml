@@ -69,6 +69,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
   <!-- Bootstrap stylesheet import -->
   <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <!-- own style information -->
+  <link rel="stylesheet" href="http://CAE-Community-Application-Editor.github.io/frontendComponent-Load-Store-Widget/css/style.css">
 
   <!-- import jQuery for AJAX calls -->
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -76,22 +78,21 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <!-- OpenApp import -->
   <script type="text/javascript" src="http://open-app.googlecode.com/files/openapp.js"></script>
-  <!-- Inter Widget Communication library import-->
-  <script type="text/javascript" src="http://dbis.rwth-aachen.de/gadgets/iwc/lib/iwc.js"></script>
-  <!-- style information -->
-  <link rel="stylesheet" href="http://localhost:80/storeLoadWidget/css/style.css">
-  <!-- import the client library -->
-  <script type="text/javascript" src="http://localhost:80/storeLoadWidget/js/las2peerWidgetLibrary.js"></script>
-  <!-- import application script -->
-  <script type="text/javascript" src="http://localhost:80/storeLoadWidget/js/applicationScript.js"></script>
+  <!-- inter widget communication library import -->
+  <script type="text/javascript" src="http://CAE-Community-Application-Editor.github.io/frontendComponent-Load-Store-Widget/js/lib/iwc.js"></script>
+  <!-- additional widget specific imports (put your own imports here as well) -->
 
-  <!-- Additional widget specific imports -->
+  <!-- import the client library -->
+  <script type="text/javascript" src="http://CAE-Community-Application-Editor.github.io/frontendComponent-Load-Store-Widget/js/lib/las2peerWidgetLibrary.js"></script>
+  <!-- import application script -->
+  <script type="text/javascript" src="http://CAE-Community-Application-Editor.github.io/frontendComponent-Load-Store-Widget/js/applicationScript.js"></script>
   
 </head>
 <body>
 
-  <!-- Container for actual page content -->
-  <div class="container" style="margin-top:20px">
+  <!-- container for actual page content -->
+  <div class="container" id="main-content">
+
     <div class="scrolltable">
       <table class="table table-striped">
         <thead>
@@ -100,13 +101,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <th>Description</th>
           </tr>
         </thead>
-        <tbody id="graphTable">
-        </tbody>
+        <tbody id='graphTable'></tbody>
       </table>
     </div>
-    
     <br>
-    
     <div class="col-lg-6">
         <div class="input-group">
           <input id ="descriptionInput" type="text" class="form-control" placeholder="Description">
@@ -116,7 +114,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </div>
         <br><button id = "newButton" class="btn btn-default" type="button">New</button>
       </div>
-    </div>
+    </div>  
 
   </div>
 
