@@ -405,18 +405,6 @@ function keyup() {
   }
 }
 
-// creates the actual node
-function createNode(videoDetails){
-  node = {id: ++lastNodeId, description: videoDetails[0], thumbnail: videoDetails[1], url: videoDetails[2]};
-  // not the nicest appearance idea but works for the moment
-  node.x = 100;
-  node.y = 100;
-  
-  nodes.push(node);
-  // restart graph drawing
-  restart();
-}
-
 // returns a (storable) graph representation
 // replaces node representations in links with references
 function getGraph(){
@@ -431,13 +419,4 @@ function getGraph(){
     "links": storableLinks
   };
   return graph;
-}
-
-// (re-) sets the graph to the given graph
-function setGraph(graph){
-  links = graph.links;
-  nodes = graph.nodes;
-  lastNodeId = nodes.length - 1;
-  initGraph();
-  restart();
 }
