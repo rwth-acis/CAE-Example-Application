@@ -1,0 +1,295 @@
+{
+    "attributes": {
+        "label": {
+            "id": "modelAttributes[label]",
+            "name": "Label",
+            "value": {
+                "id": "modelAttributes[label]",
+                "name": "Label",
+                "value": "Model attributes"
+            }
+        },
+        "left": 0,
+        "top": 0,
+        "width": 0,
+        "height": 0,
+        "zIndex": 0,
+        "type": "ModelAttributesNode",
+        "attributes": {}
+    },
+    "nodes": {
+        "f9d97a6008e7bbd559fe1169": {
+            "label": {
+                "id": "f9d97a6008e7bbd559fe1169[name]",
+                "name": "name",
+                "value": {
+                    "id": "f9d97a6008e7bbd559fe1169[name]",
+                    "name": "name",
+                    "value": "Video Player"
+                }
+            },
+            "left": 4087,
+            "top": 4584,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16001,
+            "type": "Widget",
+            "attributes": {
+                "8429a9c1eb8ecdc2b1dbd097": {
+                    "id": "f9d97a6008e7bbd559fe1169[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "f9d97a6008e7bbd559fe1169[name]",
+                        "name": "name",
+                        "value": "Video Player"
+                    }
+                },
+                "22c9ff8652e8f0c06d062b02": {
+                    "id": "f9d97a6008e7bbd559fe1169[description]",
+                    "name": "description",
+                    "value": {
+                        "id": "f9d97a6008e7bbd559fe1169[description]",
+                        "name": "description",
+                        "value": "Video Player Widget based on JWPlayer"
+                    }
+                },
+                "46981b3227d71acbe05331bf": {
+                    "id": "f9d97a6008e7bbd559fe1169[developername]",
+                    "name": "developerName",
+                    "value": {
+                        "id": "f9d97a6008e7bbd559fe1169[developername]",
+                        "name": "developerName",
+                        "value": "Peter de Lange"
+                    }
+                },
+                "140cc72cc3228a273326c450": {
+                    "id": "f9d97a6008e7bbd559fe1169[developermail]",
+                    "name": "developerMail",
+                    "value": {
+                        "id": "f9d97a6008e7bbd559fe1169[developermail]",
+                        "name": "developerMail",
+                        "value": "lange@dbis.rwth-aachen.de"
+                    }
+                },
+                "e21ce18ca763e433fcb16546": {
+                    "id": "f9d97a6008e7bbd559fe1169[width]",
+                    "name": "width",
+                    "value": {
+                        "id": "f9d97a6008e7bbd559fe1169[width]",
+                        "name": "width",
+                        "value": "800"
+                    }
+                },
+                "d36e79e0c322818ddcefd09c": {
+                    "id": "f9d97a6008e7bbd559fe1169[height]",
+                    "name": "height",
+                    "value": {
+                        "id": "f9d97a6008e7bbd559fe1169[height]",
+                        "name": "height",
+                        "value": "600"
+                    }
+                },
+                "0eb8e4a4a056d7198eb90eed": {
+                    "id": "f9d97a6008e7bbd559fe1169[microserviceaddress]",
+                    "name": "microserviceAddress",
+                    "value": {
+                        "id": "f9d97a6008e7bbd559fe1169[microserviceaddress]",
+                        "name": "microserviceAddress",
+                        "value": "null"
+                    }
+                }
+            }
+        },
+        "381b969156875d7e571e6d65": {
+            "label": {
+                "id": "381b969156875d7e571e6d65[label]",
+                "name": "Label",
+                "value": {
+                    "id": "381b969156875d7e571e6d65[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "left": 4409,
+            "top": 4569,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16002,
+            "type": "HTML Element",
+            "attributes": {
+                "f8b228ce6cb6e6ca97080624": {
+                    "id": "381b969156875d7e571e6d65[type]",
+                    "name": "type",
+                    "value": {
+                        "id": "381b969156875d7e571e6d65[type]",
+                        "name": "type",
+                        "value": "div"
+                    }
+                },
+                "d326bc315a5c9e11522b58e5": {
+                    "id": "381b969156875d7e571e6d65[id]",
+                    "name": "id",
+                    "value": {
+                        "id": "381b969156875d7e571e6d65[id]",
+                        "name": "id",
+                        "value": "player"
+                    }
+                },
+                "8a1165e52b225727d3c4fd75": {
+                    "id": "381b969156875d7e571e6d65[static]",
+                    "name": "static",
+                    "value": {
+                        "id": "381b969156875d7e571e6d65[static]",
+                        "name": "static",
+                        "value": false
+                    }
+                },
+                "4a7fa8f9d5c8c37a64832eff": {
+                    "id": "381b969156875d7e571e6d65[collaborative]",
+                    "name": "collaborative",
+                    "value": {
+                        "id": "381b969156875d7e571e6d65[collaborative]",
+                        "name": "collaborative",
+                        "value": false
+                    }
+                }
+            }
+        },
+        "641e37179f7769943299fd40": {
+            "label": {
+                "id": "641e37179f7769943299fd40[name]",
+                "name": "name",
+                "value": {
+                    "id": "641e37179f7769943299fd40[name]",
+                    "name": "name",
+                    "value": "playbackVideo"
+                }
+            },
+            "left": 4352,
+            "top": 4431,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16003,
+            "type": "Function",
+            "attributes": {
+                "919c6c03fb051f16d8fef15f": {
+                    "id": "641e37179f7769943299fd40[name]",
+                    "name": "name",
+                    "value": {
+                        "id": "641e37179f7769943299fd40[name]",
+                        "name": "name",
+                        "value": "playbackVideo"
+                    }
+                },
+                "9cdca7cf182676e04bfd0a0b": {
+                    "id": "641e37179f7769943299fd40[returnparameter]",
+                    "name": "returnParameter",
+                    "value": {
+                        "id": "641e37179f7769943299fd40[returnparameter]",
+                        "name": "returnParameter",
+                        "value": ""
+                    }
+                }
+            }
+        },
+        "17941457c86511f546292f2a": {
+            "label": {
+                "id": "17941457c86511f546292f2a[label]",
+                "name": "Label",
+                "value": {
+                    "id": "17941457c86511f546292f2a[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "left": 4146,
+            "top": 4480,
+            "width": 100,
+            "height": 50,
+            "zIndex": 16004,
+            "type": "IWC Response",
+            "attributes": {
+                "181d0177c3bfcc27ca3c9535": {
+                    "id": "17941457c86511f546292f2a[intentaction]",
+                    "name": "intentAction",
+                    "value": {
+                        "id": "17941457c86511f546292f2a[intentaction]",
+                        "name": "intentAction",
+                        "value": "PLAYBACK_VIDEO"
+                    }
+                },
+                "4392a3a0cbaafd160c127c7b": {
+                    "id": "17941457c86511f546292f2a[content]",
+                    "name": "content",
+                    "value": {
+                        "id": "17941457c86511f546292f2a[content]",
+                        "name": "content",
+                        "value": "videoDetails"
+                    }
+                }
+            }
+        }
+    },
+    "edges": {
+        "d2e5bf25f6245c39a8a01b68": {
+            "label": {
+                "id": "d2e5bf25f6245c39a8a01b68[label]",
+                "name": "Label",
+                "value": {
+                    "id": "d2e5bf25f6245c39a8a01b68[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "f9d97a6008e7bbd559fe1169",
+            "target": "381b969156875d7e571e6d65",
+            "attributes": {},
+            "type": "Widget to HTML Element"
+        },
+        "9a9afc6063bc4ccc6e41e057": {
+            "label": {
+                "id": "9a9afc6063bc4ccc6e41e057[label]",
+                "name": "Label",
+                "value": {
+                    "id": "9a9afc6063bc4ccc6e41e057[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "641e37179f7769943299fd40",
+            "target": "381b969156875d7e571e6d65",
+            "attributes": {},
+            "type": "Element Update"
+        },
+        "ad1e59625d47b81810fef62a": {
+            "label": {
+                "id": "ad1e59625d47b81810fef62a[label]",
+                "name": "Label",
+                "value": {
+                    "id": "ad1e59625d47b81810fef62a[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "641e37179f7769943299fd40",
+            "target": "17941457c86511f546292f2a",
+            "attributes": {},
+            "type": "Waits for"
+        },
+        "547f0e6d250ae910be95b8f7": {
+            "label": {
+                "id": "547f0e6d250ae910be95b8f7[label]",
+                "name": "Label",
+                "value": {
+                    "id": "547f0e6d250ae910be95b8f7[label]",
+                    "name": "Label",
+                    "value": ""
+                }
+            },
+            "source": "f9d97a6008e7bbd559fe1169",
+            "target": "641e37179f7769943299fd40",
+            "attributes": {},
+            "type": "Widget to Function"
+        }
+    }
+}

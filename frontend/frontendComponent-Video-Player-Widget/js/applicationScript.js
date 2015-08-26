@@ -33,19 +33,25 @@
 var client;
 
 var init = function() {
-
+  
   var iwcCallback = function(intent) {
     // define your reactions on incoming iwc events here
     console.log(intent);
     if (intent.action == "PLAYBACK_VIDEO") {
-      var videoDetails = $.parseJSON(intent.data);
-      playbackVideo(videoDetails);
+      playbackVideo(intent.data);
     }
   };
-  client = new Las2peerWidgetLibrary(null, iwcCallback);
+  
+  client = new Las2peerWidgetLibrary("null", iwcCallback);
+  
+
 }
 
-var playbackVideo = function(videoDetails) {
+
+// playbackVideo
+var playbackVideo = function(videoDetails){
+  var videoDetails = $.parseJSON(videoDetails);
+  // updateds "player" html element
   jwplayer("player").setup({
     width: 700,
     height: 500,
@@ -53,6 +59,7 @@ var playbackVideo = function(videoDetails) {
     image: videoDetails[1]
   });
 }
+
 
 $(document).ready(function() {
   init();
