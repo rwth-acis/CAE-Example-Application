@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="Video List"
-    description="A Widget-Frontend for the LAS2peer Video List Service"
+  <ModulePrefs title="Video List" description="A Widget-Frontend for the LAS2peer Video List Service"
     author="Peter de Lange" author_email="lange@dbis.rwth-aachen.de"
     width="500" height="600">
 
@@ -59,8 +58,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LAS2peer Service - Video Details Frontend</title>
-  
+  <title>Video List</title>
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -68,29 +67,32 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <!-- Stylesheet import -->
+  <!-- Bootstrap stylesheet import -->
   <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  
+  <!-- own style information -->
+  <link rel="stylesheet" href="http://CAE-Community-Application-Editor.github.io/frontendComponent-Video-List-Widget/css/style.css">
+
   <!-- import jQuery for AJAX calls -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <!-- import Bootstrap for responsive UI -->
   <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  <!-- OpenApp Import -->
-  <script src="http://open-app.googlecode.com/files/openapp.js"></script>
-  <!-- Inter Widget Communication library import-->
-  <script src="http://dbis.rwth-aachen.de/gadgets/iwc/lib/iwc.js"></script>
-    <!-- Additional widget specific imports -->
-  <link rel="stylesheet" href="http://localhost:80/videoListWidget/css/style.css">
+  <!-- OpenApp import -->
+  <script type="text/javascript" src="http://open-app.googlecode.com/files/openapp.js"></script>
+  <!-- inter widget communication library import -->
+  <script type="text/javascript" src="http://CAE-Community-Application-Editor.github.io/frontendComponent-Video-List-Widget/js/lib/iwc.js"></script>
+  <!-- additional widget specific imports (put your own imports here as well) -->
+
   <!-- import the client library -->
-  <script type="text/javascript" src="http://localhost:80/videoListWidget/js/las2peerWidgetLibrary.js"></script>
+  <script type="text/javascript" src="http://CAE-Community-Application-Editor.github.io/frontendComponent-Video-List-Widget/js/lib/las2peerWidgetLibrary.js"></script>
   <!-- import application script -->
-  <script type="text/javascript" src="http://localhost:80/videoListWidget/js/applicationScript.js"></script>
+  <script type="text/javascript" src="http://CAE-Community-Application-Editor.github.io/frontendComponent-Video-List-Widget/js/applicationScript.js"></script>
   
 </head>
 <body>
-  
-  <!-- Container for actual page content -->
-  <div class="container" style="margin-top:20px">
+
+  <!-- container for actual page content -->
+  <div class="container" id="main-content">
+
     <div class="scrolltable">
       <table class="table table-striped">
         <thead>
@@ -102,10 +104,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <th class='visible-lg-block'>URL</th>
           </tr>
         </thead>
-        <tbody id="videoTable">
-        </tbody>
+        <tbody id='videoTable'></tbody>
       </table>
     </div>
+
   </div>
 
 </body>
